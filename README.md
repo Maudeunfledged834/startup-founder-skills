@@ -257,7 +257,7 @@ Found a way to improve a skill? Have a new skill to suggest? PRs and issues welc
 ### Adding a New Skill
 
 1. Create a new directory under `skills/` with a kebab-case name
-2. Add a `skill.md` file following the template in [CONTRIBUTING.md](CONTRIBUTING.md)
+2. Add a `SKILL.md` file following the template in [CONTRIBUTING.md](CONTRIBUTING.md)
 3. Include: trigger conditions, workflow steps, output format, and related skills
 4. Update the skills table in this README
 5. Open a PR

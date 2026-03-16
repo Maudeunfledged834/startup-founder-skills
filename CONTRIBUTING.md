@@ -4,12 +4,12 @@ Thanks for helping improve Startup Founder Skills! Here's how to add or improve 
 
 ## Skill File Structure
 
-Each skill lives in its own directory under `skills/` and contains a `skill.md` file:
+Each skill lives in its own directory under `skills/` and contains a `SKILL.md` file:
 
 ```
 skills/
   your-skill-name/
-    skill.md
+    SKILL.md
 ```
 
 ## Skill Template
@@ -62,7 +62,7 @@ Show 1-2 example prompts and what good output looks like.
 ## Submitting a PR
 
 1. Fork the repo
-2. Create your skill directory and `skill.md`
+2. Create your skill directory and `SKILL.md`
 3. Add your skill to the table in `README.md` (alphabetical within its category)
 4. Open a PR with a brief description of the skill and why it's useful
 
