@@ -1,6 +1,6 @@
 ---
 name: proposal-generation
-trigger: When a founder needs to create a sales proposal, statement of work, pricing quote, or formal offer document. Activate when the user mentions proposal, SOW, quote, pricing document, or needs to formalize a deal after a successful sales conversation.
+trigger: When a founder needs to create a sales proposal, statement of work, contract, NDA, or master service agreement. Activate when the user mentions proposal, SOW, quote, contract, NDA, MSA, or needs to formalize a deal.
 related: [sales-script, cold-outreach]
 reads: [startup-context]
 ---
@@ -8,132 +8,124 @@ reads: [startup-context]
 # Proposal Generation
 
 ## When to Use
-Activate when a founder needs to produce a formal sales proposal, statement of work (SOW), pricing quote, or service agreement. Also use when the user says "I need to send them a proposal," "write me an SOW," "help me put together a quote," or "how do I formalize this deal."
+- Starting a new client engagement and need a contract or proposal fast
+- Client asks for a proposal with pricing and timeline
+- Partnership or vendor relationship requiring an MSA
+- Protecting IP or confidential information with an NDA
+- Need a Statement of Work with a deliverables matrix
+- EU/DACH project requiring GDPR-compliant data clauses
 
 ## Context Required
 From `startup-context` or the user:
-- **Prospect details** — Company name, contact, industry, size
-- **Problem and needs** — What was discussed in discovery/demo, confirmed pain points
-- **Proposed solution** — What you will deliver, scope, and timeline
-- **Pricing** — Your pricing model, proposed price, any discounts or custom terms
-- **Stakeholders** — Decision makers, champions, and blockers
-- **Competitive situation** — Who else they are evaluating, if known
-- **Timeline** — Their desired start date and decision timeline
+- **Document type** — Contract, proposal, SOW, NDA (mutual/one-way), or MSA
+- **Jurisdiction** — US (Delaware), EU (GDPR), UK (post-Brexit), or DACH (German law)
+- **Engagement type** — Fixed-price, hourly, or retainer
+- **Parties** — Names, roles, business addresses
+- **Scope summary** — 1-3 sentences describing the engagement
+- **Financial terms** — Total value, hourly rate, or retainer amount
+- **Timeline** — Start date, end date or duration, milestone dates
+- **Special requirements** — IP assignment, white-label, subcontractors, exclusivity
 
 ## Workflow
-1. **Gather requirements** — Read startup-context if available. Ask for prospect details, deal context, and scope.
-2. **Define scope** — Clarify exactly what is included and, critically, what is not included. Ambiguous scope is the top source of post-sale conflict.
-3. **Structure the proposal** — Choose the appropriate format (full proposal, SOW, or pricing quote) based on deal size and complexity.
-4. **Draft the executive summary** — Write a compelling 1-page summary that mirrors the prospect's language from discovery and connects their problem to your solution and expected outcomes.
-5. **Detail the solution** — Map each component of your solution to a specific need the prospect expressed.
-6. **Build the pricing section** — Present pricing clearly with options when appropriate. Include what is included in each tier.
-7. **Finalize with terms and next steps** — Add validity period, payment terms, and a clear path to signing.
+1. **Gather requirements** — Read startup-context if available. Collect all eight inputs listed above. Flag any missing item as REQUIRED.
+2. **Select document type** — Match the engagement to the right format: fixed-price contract, consulting retainer, SaaS partnership, NDA, SOW, or full proposal.
+3. **Apply jurisdiction rules** — Select clause variants based on governing law. US uses work-for-hire doctrine; EU requires explicit IP assignment deeds; DACH requires transfer of Nutzungsrechte since authors retain moral rights under BGB.
+4. **Draft the document** — Fill all sections using structured Markdown with bracketed placeholders for client-specific data. Include the key clauses table below.
+5. **Add GDPR addendum if needed** — For EU/DACH engagements handling personal data, attach a Data Processing Addendum per Art. 28 GDPR covering data categories, sub-processors, and cross-border transfer mechanisms.
+6. **Review for common pitfalls** — Check for missing IP assignment language, vague acceptance criteria, no change order process, jurisdiction mismatches, and missing liability caps.
+7. **Provide conversion instructions** — Include Pandoc commands for DOCX output with legal-style numbered sections.
 
 ## Output Format
-Deliver a complete proposal document with these sections:
-1. **Cover page** — Prospect company, your company, date, prepared-by
-2. **Executive summary** — 1 page maximum
-3. **Understanding of needs** — Their situation and challenges in their words
-4. **Proposed solution** — What you will deliver, mapped to their needs
-5. **Implementation plan** — Timeline, milestones, responsibilities
-6. **Pricing and investment** — Clear breakdown with options if applicable
-7. **Terms and conditions** — Validity, payment terms, assumptions
-8. **Next steps** — Specific actions with dates
-9. **Appendix** — Case studies, team bios, technical details (optional)
+Deliver a complete document in structured Markdown containing:
+1. **Header block** — Effective date, party names, addresses
+2. **Services / scope** — Detailed deliverables with acceptance criteria and dates
+3. **Payment terms** — Milestone-based, net-30, or retainer schedule with late payment interest
+4. **Intellectual property** — Ownership assignment, pre-existing IP licenses, portfolio rights
+5. **Confidentiality** — Duration (2-5 years standard, perpetual for trade secrets)
+6. **Warranties** — As-is disclaimer or limited fix warranty (30/90-day)
+7. **Liability cap** — 1x contract value standard, 3x for high-risk engagements
+8. **Termination** — For cause (14-day cure) and for convenience (30/60/90-day notice)
+9. **Dispute resolution** — Jurisdiction-appropriate arbitration (AAA/ICC/LCIA/DIS)
+10. **Signature block** — Both parties with date lines
 
 ## Frameworks & Best Practices
 
-### The Mirror-Then-Lead Principle
-The first half of a proposal should make the prospect feel deeply understood. Mirror back their exact language, their specific pain points, and their stated goals. Only after they feel heard do you present your solution. Proposals that lead with the vendor's capabilities instead of the buyer's needs get ignored.
+### Key Clauses Reference
 
-### Executive Summary Framework
-The executive summary is the most important page. Many decision makers read only this section. Structure it as:
-1. **Their challenge** (2-3 sentences) — Restate the problem using their words from discovery
-2. **The cost of inaction** (1-2 sentences) — What happens if they do nothing
-3. **Your approach** (2-3 sentences) — How you will solve it, at a high level
-4. **Expected outcomes** (2-3 bullet points) — Specific, measurable results they can expect
-5. **Investment overview** (1 sentence) — Total cost and timeline summary
+| Clause | Options |
+|--------|---------|
+| Payment terms | Net-30, milestone-based, monthly retainer |
+| IP ownership | Work-for-hire (US), assignment (EU/UK), Nutzungsrechte transfer (DACH) |
+| Liability cap | 1x contract value (standard), 3x (high-risk) |
+| Termination | For cause (14-day cure), convenience (30/60/90-day notice) |
+| Confidentiality | 2-5 year term, perpetual for trade secrets |
+| Dispute resolution | AAA (US), ICC (EU), LCIA (UK), DIS (DACH) |
 
-### Scope Definition Best Practices
-- **Be explicit about exclusions.** "This proposal does not include X" prevents scope creep and disputes.
-- **Use a deliverables table.** Each deliverable gets a row: description, acceptance criteria, delivery date.
-- **Distinguish phases.** Break large projects into phases with clear milestones and go/no-go decision points.
-- **Define assumptions.** List what must be true for the timeline and price to hold (e.g., "Client provides API access within 5 business days of kickoff").
+### Jurisdiction-Specific Rules
+- **US (Delaware):** Work-for-hire doctrine applies under Copyright Act 101. Arbitration via AAA Commercial Rules. Non-competes enforceable with reasonable scope/time.
+- **EU (GDPR):** Must include Data Processing Addendum for any personal data. IP assignment may require separate written deed. Arbitration via ICC.
+- **UK (post-Brexit):** Governed by English law. IP under Patents Act 1977 / CDPA 1988. UK GDPR applies. Arbitration via LCIA Rules.
+- **DACH:** BGB governs contracts. Written form required for certain clauses (para 126 BGB). Authors retain moral rights — must explicitly transfer Nutzungsrechte. Non-competes max 2 years with compensation required (para 74 HGB). Include Schriftformklausel.
 
-| Section | Include | Exclude |
-|---------|---------|---------|
-| Deliverables | Specific items with acceptance criteria | Vague promises like "ongoing support" |
-| Timeline | Dates or durations per milestone | Open-ended timelines |
-| Responsibilities | Who does what on each side | Assumptions that one side does everything |
-| Assumptions | Conditions the proposal depends on | Hidden dependencies |
-
-### Pricing Presentation Strategies
-
-**The Three-Option Framework:**
-Present three tiers to anchor the prospect and make the middle option feel like the natural choice.
+### Pricing Presentation Strategy
+Present three tiers to anchor the prospect and make the middle option feel natural:
 
 | | Starter | Recommended | Premium |
 |---|---------|-------------|---------|
-| **What is included** | Core features | Core + integrations | Everything + custom |
-| **Best for** | Teams getting started | Most teams | Enterprise needs |
-| **Price** | $X/mo | $Y/mo | $Z/mo |
+| Scope | Core deliverables | Core + integrations | Everything + custom work |
+| Best for | Teams getting started | Most teams | Enterprise needs |
+| Price | $X | $Y | $Z |
 
-**Pricing principles:**
-- Lead with value, not cost. Frame pricing after the solution and expected outcomes.
-- Show ROI math. "This investment of $X will save/generate $Y, paying for itself in Z months."
-- Do not bury the price. Prospects lose trust when they have to hunt for it.
-- If offering a discount, anchor it. Show the standard price, then the discount with a reason (annual commitment, pilot pricing, early adopter).
-- Include what happens at renewal. Surprises at renewal kill retention.
-
-### Proposal Length Guidelines
-
-| Deal Size | Proposal Length | Format |
-|-----------|----------------|--------|
-| Under $10K | 2-3 pages | Pricing quote or short proposal |
-| $10K-$50K | 5-7 pages | Standard proposal |
-| $50K-$250K | 8-12 pages | Detailed proposal with appendix |
-| $250K+ | 12-20 pages | Full proposal with SOW and appendix |
+Always lead with value before cost. Show ROI math: "This investment of $X saves $Y, paying for itself in Z months."
 
 ### SOW-Specific Guidance
-A Statement of Work is more operational than a proposal. It focuses on execution, not persuasion. Key sections:
-- **Project overview** — Brief summary of the engagement
-- **Scope of work** — Detailed deliverables with acceptance criteria
-- **Timeline and milestones** — Gantt-style or table with dates
-- **Roles and responsibilities** — RACI matrix for each workstream
+A Statement of Work is operational, not persuasive. Key sections:
+- **Deliverables table** — Each deliverable gets a row: description, acceptance criteria, delivery date
+- **RACI matrix** — Roles and responsibilities for each workstream
 - **Change management** — How to handle scope changes and the approval process
-- **Payment schedule** — Tied to milestones, not just dates
+- **Payment schedule** — Tied to milestones, not just calendar dates
+- **Assumptions** — Conditions the timeline and price depend on
 
-### Founder-Specific Advantages in Proposals
-- You can commit to personal involvement — "I will personally lead your onboarding"
-- You can offer product roadmap influence — "Your feedback will directly shape our Q3 roadmap"
-- You can make pricing decisions in real time without lengthy approval chains
-- Reference your founding story — why you built this product connects emotionally in a way a generic vendor proposal does not
+### Common Pitfalls
+1. **Missing IP assignment language** — "Work for hire" alone is insufficient in EU; DACH needs explicit Nutzungsrechte transfer
+2. **Vague acceptance criteria** — Always define what "accepted" means with written sign-off and rejection windows
+3. **No change order process** — Scope creep kills fixed-price projects; add a clause for out-of-scope work
+4. **Jurisdiction mismatch** — Choosing Delaware law for a German-only project creates enforcement problems
+5. **Missing liability cap** — Without a cap, one bug could mean unlimited damages
+6. **Oral amendments** — Always require written amendments signed by both parties
 
-### Common Proposal Mistakes
-- **Too generic** — If the prospect's name could be swapped out without changing the content, it is not customized enough
-- **Feature-focused instead of outcome-focused** — Talk about what changes for them, not what your product does
-- **No urgency or validity period** — Always include "This proposal is valid until [date]"
-- **Missing next steps** — Every proposal needs a clear "here is how to move forward" section with specific actions
-- **Scope ambiguity** — "We will provide support" means something different to every reader. Define it.
-- **Sending without a walkthrough** — Always offer to walk the prospect through the proposal live. Do not just email it and hope.
+**Disclaimer:** Not a substitute for legal counsel. Use these as strong starting frameworks; review with an attorney for high-value or complex engagements.
 
 ## Related Skills
-- `sales-script` — use for the conversations that precede the proposal (discovery, demo, negotiation)
-- `cold-outreach` — use to generate the initial conversations that lead to proposal-stage deals
+- `sales-script` — Use for the sales conversations that precede the proposal
+- `cold-outreach` — Use to generate the initial conversations that lead to proposal-stage deals
 
 ## Examples
 
-**Example prompt:** "I need to send a proposal to Acme Corp for our data pipeline product. They need to migrate from their legacy ETL system. Budget is around $80K/year. Main contact is their VP of Data."
+**Prompt:** "I need a fixed-price contract for a $45K web app project with a German client."
 
-**Good executive summary output:**
-> ## Executive Summary
->
-> Acme Corp's data team currently spends an estimated 20+ hours per week maintaining legacy ETL pipelines that break during peak load and lack visibility into failure points. This operational burden slows down the analytics team's ability to deliver insights and puts quarterly reporting timelines at risk.
->
-> We propose replacing Acme's legacy ETL infrastructure with [Product], providing a managed data pipeline platform that eliminates manual maintenance, offers real-time monitoring, and scales automatically with data volume. Based on our work with similar data teams, we expect Acme to:
->
-> - **Reduce pipeline maintenance time by 75%**, freeing ~15 hours/week for the data team
-> - **Eliminate unplanned pipeline failures** with proactive monitoring and auto-recovery
-> - **Cut quarterly reporting preparation from 2 weeks to 2 days**
->
-> The total annual investment is $78,000, with an estimated payback period of 4 months based on engineering time savings alone. Implementation takes 6 weeks, with the first pipelines live in production by week 3.
+**Good output snippet:**
+```
+# SOFTWARE DEVELOPMENT AGREEMENT
+
+Effective Date: [DATE]
+Client: [CLIENT LEGAL NAME], [ADDRESS] ("Client")
+Developer: [YOUR LEGAL NAME / COMPANY], [ADDRESS] ("Developer")
+
+Governing Law: German law (BGB)
+Arbitration: DIS Rules, [CITY]
+
+## 2. PAYMENT
+Total Fee: EUR 45,000
+
+| Milestone | Amount | Due |
+|-----------|--------|-----|
+| Contract signing | 50% (EUR 22,500) | Upon execution |
+| Beta delivery | 25% (EUR 11,250) | [DATE] |
+| Final acceptance | 25% (EUR 11,250) | Within 5 days of acceptance |
+
+## 3. INTELLECTUAL PROPERTY
+Upon receipt of full payment, Developer assigns all Nutzungsrechte
+(usage rights) in the Work Product to Client. Developer retains moral
+rights per German copyright law (UrhG).
+```

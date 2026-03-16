@@ -8,42 +8,49 @@ reads: [startup-context]
 # Privacy Policy
 
 ## When to Use
-Activate when a founder needs to create a privacy policy for a new product launch, update an existing policy to cover new data practices, expand into a new jurisdiction (EU, California, etc.), or assess whether their current data handling is properly disclosed. Also activate when the user asks about GDPR, CCPA, CPRA, or general data privacy compliance.
+Activate when a founder needs to create a privacy policy for a new product launch, update an existing policy for new data practices or features, expand into a new jurisdiction (EU, California, etc.), or assess whether current data handling is properly disclosed. Also activate when the user asks about GDPR, CCPA, CPRA, or general data privacy compliance.
 
 ## Context Required
 - **From startup-context:** product type, platform (web/mobile/API), target customer segments, geographic markets, business model, tech stack.
-- **From the user:** what personal data is collected, how it is used, what third-party services process data (analytics, payment processors, CRMs), whether the product targets minors, whether data is sold or shared for advertising, and any existing privacy documentation.
+- **From the user:** product name and URL, company legal name and address, contact email for privacy inquiries, what personal data is collected and how, which third-party services process data (analytics, payment processors, CRMs, AI providers), applicable jurisdictions, whether the product targets minors, and any existing privacy documentation.
 
 ## Workflow
-1. **Data mapping** — Identify all categories of personal data collected, the purpose for each, the legal basis for processing, retention periods, and all third parties who receive the data. Produce a structured data inventory table.
-2. **Jurisdiction analysis** — Based on where users are located and where the company operates, determine which privacy frameworks apply (GDPR, CCPA/CPRA, PIPEDA, LGPD, etc.). Flag specific obligations per jurisdiction.
-3. **Gap assessment** — Compare current data practices against legal requirements. Identify missing disclosures, absent consent mechanisms, or data processing without a valid legal basis.
-4. **Policy drafting** — Write the privacy policy using plain language, organized by the section template below. Avoid legalese where possible while remaining legally precise.
-5. **Implementation checklist** — Produce a concrete list of technical and operational steps needed to comply (cookie banners, opt-out mechanisms, data deletion workflows, DPA agreements with vendors).
-6. **Compliance flagging** — Highlight areas of elevated risk in red/yellow format. Red = likely non-compliant and needs immediate action. Yellow = ambiguous or depends on interpretation, recommend legal review.
+1. **Research the product** -- Visit the product website or review the product description. Identify all data collection methods, third-party integrations, and primary features that involve personal data.
+2. **Map data collection** -- Categorize all data into: directly provided (forms, account creation), automatically collected (cookies, device info, usage data, IP addresses), third-party sources, and special/sensitive categories. Build a structured data inventory.
+3. **Identify applicable laws** -- Based on where users are located and where the company operates, determine which privacy frameworks apply: GDPR, CCPA/CPRA, state privacy laws, COPPA, industry-specific regulations. Note specific obligations per jurisdiction.
+4. **Structure the policy** -- Organize using the 15-section template below. Write in plain language at an 8th-grade reading level. Be specific about actual practices -- say "We collect your email address when you sign up" rather than "We may process identifiers."
+5. **Flag legal review areas** -- Mark sections requiring attorney review with `[LEGAL REVIEW REQUIRED]` notation. These include legal basis determinations, international transfer mechanisms, and jurisdiction-specific rights.
+6. **Provide implementation context** -- Explain why each section matters, what company decisions are needed, and what compliance considerations apply. Include a pre-publication checklist.
+7. **Generate compliance summary** -- Produce a separate document with data inventory table, jurisdiction applicability matrix, risk flags, and implementation checklist.
 
 ## Output Format
-A privacy policy document with the following sections, plus a separate compliance summary.
+Three-part deliverable:
 
-### Policy Sections
-1. **Introduction** — Who you are, what this policy covers, effective date.
-2. **Data We Collect** — Categories of personal data, organized by collection method (directly provided, automatically collected, third-party sources).
-3. **How We Use Your Data** — Purposes of processing, mapped to legal bases (consent, contract performance, legitimate interest).
-4. **How We Share Your Data** — Categories of third-party recipients, purpose of sharing, whether data is sold (CCPA definition).
-5. **Data Retention** — How long each category is retained and why.
-6. **Your Rights** — Rights by jurisdiction (access, deletion, portability, opt-out of sale, correction, restriction of processing).
-7. **Cookies & Tracking** — What tracking technologies are used, purposes, and how to manage preferences.
-8. **International Transfers** — Whether data crosses borders, transfer mechanisms (SCCs, adequacy decisions).
-9. **Children's Privacy** — COPPA/age-gating disclosures if applicable.
-10. **Security Measures** — High-level description of safeguards (encryption, access controls).
-11. **Changes to This Policy** — How users will be notified of updates.
-12. **Contact Information** — Data controller identity, DPO contact if applicable, supervisory authority.
+### Part 1: Quick Reference Summary
+Product details, data types collected, applicable jurisdictions, user rights summary, retention overview, and contact information.
 
-### Compliance Summary (separate document)
-- Data inventory table
-- Jurisdiction applicability matrix
-- Red/yellow flag list with recommended actions
-- Implementation checklist with priority ordering
+### Part 2: Full Policy Document (15 sections)
+1. **Preamble** -- Who you are, what this policy covers, effective date, contact methods.
+2. **Information We Collect** -- Categories: personal info, usage data, device information, location, payment info, communications, sensitive data.
+3. **How We Collect Information** -- Methods: direct entry, automatic tracking, third parties.
+4. **How We Use Information** -- Purposes: service provision, support, improvements, analytics, marketing, security, legal compliance.
+5. **Legal Basis for Processing** -- Consent, contract performance, legal obligation, vital interests, legitimate interests (GDPR-focused).
+6. **Data Sharing and Third Parties** -- Service providers, partners, legal authorities, with specifics on who and why.
+7. **International Data Transfer** -- Cross-border transfer mechanisms (SCCs, adequacy decisions), storage locations.
+8. **Data Retention** -- Specific timeframes for account data, logs, deleted content.
+9. **User Rights** -- Access, deletion, correction, restrict processing, portability, opt-out, complaint procedures -- organized by jurisdiction.
+10. **Cookies and Tracking** -- Tools used, purposes, management options, consent requirements.
+11. **Security** -- Encryption, access controls, audits, incident response, limitations.
+12. **Children's Privacy** -- Parental consent, age gates, COPPA/UK Children's Code compliance.
+13. **Contact and Rights Requests** -- Privacy email, address, response timeframes, DPO info.
+14. **Policy Changes** -- Notice period, notification methods, user opt-out options.
+15. **Additional Provisions** -- Data sale disclosure, third-party link disclaimers, governing law, effective date.
+
+### Part 3: Compliance Notes
+- Sections flagged for legal review with rationale
+- Jurisdiction-specific considerations
+- Pre-publication checklist (see below)
+- Recommended modifications by product type
 
 ## Frameworks & Best Practices
 
@@ -52,68 +59,56 @@ A privacy policy document with the following sections, plus a separate complianc
 - Data Protection Impact Assessment for high-risk processing (Art. 35).
 - 72-hour breach notification to supervisory authority (Art. 33).
 - Data Processing Agreements with all processors (Art. 28).
-- Right to erasure ("right to be forgotten") with defined exceptions (Art. 17).
+- Right to erasure with defined exceptions (Art. 17).
 - Privacy by design and by default (Art. 25).
 
 ### CCPA/CPRA Core Requirements
 - "Do Not Sell or Share My Personal Information" link required if applicable.
 - Right to know, delete, correct, and opt out of sale/sharing.
 - 12-month lookback for data collection disclosures.
-- Sensitive personal information: right to limit use and disclosure (CPRA addition).
-- Service provider vs. contractor vs. third party distinctions matter for data sharing.
+- Sensitive personal information: right to limit use (CPRA addition).
+- Service provider vs. contractor vs. third party distinctions matter.
 
 ### Plain Language Principles
-- Write at an 8th-grade reading level. Use short sentences.
-- Define technical terms on first use.
-- Use concrete examples: "We collect your email address when you sign up" rather than "We may process identifiers."
-- Organize with clear headings and bullet points.
+- Write at an 8th-grade reading level with short sentences.
+- Use concrete examples instead of abstract categories.
 - Avoid "may" when you mean "do." Be specific about actual practices.
+- The policy must match what your product actually does -- no over-disclosure and no under-disclosure.
+
+### Pre-Publication Checklist
+- [ ] Attorney review completed
+- [ ] Policy matches actual data practices
+- [ ] User privacy request processes are accessible and functional
+- [ ] Technical security measures implemented
+- [ ] Data Processing Agreements in place with all third parties
+- [ ] Legal basis documented for each processing activity
+- [ ] Cookie consent mechanism implemented (EU users)
+- [ ] User notification system for material policy changes
 
 ### Common Startup Pitfalls
 - Copying another company's privacy policy (their data practices are not yours).
-- Listing data collection categories you do not actually perform (over-disclosure invites scrutiny).
-- Missing analytics and advertising SDKs in your disclosures (Google Analytics, Mixpanel, Facebook Pixel all collect personal data).
-- No mechanism to actually fulfill deletion requests in your codebase.
+- Missing analytics and advertising SDKs in disclosures (Google Analytics, Mixpanel, Facebook Pixel all collect personal data).
+- No mechanism to actually fulfill deletion requests in the codebase.
 - Assuming B2B means no privacy obligations (you still process individual user data).
+- Listing data categories you do not actually collect (over-disclosure invites scrutiny).
 
 ## Related Skills
-- `terms-of-service` — Draft alongside the privacy policy; they should cross-reference each other and use consistent definitions.
-- `soc2-prep` — SOC 2 Trust Service Criteria for Privacy directly overlaps with privacy policy commitments. Align both.
-- `security-review` — Security measures described in the privacy policy must reflect actual technical controls.
+- `terms-of-service` -- Draft alongside the privacy policy; they should cross-reference each other and use consistent definitions.
+- `soc2-prep` -- SOC 2 Trust Service Criteria for Privacy directly overlaps with privacy policy commitments.
+- `security-review` -- Security measures described in the privacy policy must reflect actual technical controls.
 
 ## Examples
 
 ### Example 1: New SaaS product launching in US and EU
-**User:** "We're launching our project management SaaS next month. We have users signing up from the US and Europe. We use Stripe for payments, Mixpanel for analytics, and AWS for hosting. Need a privacy policy."
+**User:** "We're launching our project management SaaS next month with users from the US and Europe. We use Stripe, Mixpanel, and AWS."
 
-**Good output excerpt:**
-> **Data Inventory:**
->
-> | Data Category | Collection Method | Purpose | Legal Basis (GDPR) | Third Parties | Retention |
-> |---|---|---|---|---|---|
-> | Email, name | Registration form | Account creation | Contract performance | None | Account lifetime + 30 days |
-> | Payment card (tokenized) | Checkout flow | Payment processing | Contract performance | Stripe | Per Stripe retention policy |
-> | Usage events, IP address | Automatic collection | Product analytics | Legitimate interest | Mixpanel | 12 months |
->
-> **Jurisdiction Analysis:**
-> - GDPR applies: you have EU users. You need a lawful basis for each processing activity, a mechanism for cross-border transfer (AWS US regions), and a DPA with Stripe and Mixpanel.
-> - CCPA applies if you meet thresholds (annual revenue >$25M, or >100K consumers, or >50% revenue from selling data). Monitor as you scale.
->
-> **Red Flags:**
-> - Mixpanel collects IP addresses and device identifiers. You need this disclosed and a DPA in place.
-> - No cookie consent mechanism described. EU users require opt-in consent for analytics cookies.
+**Good output:** A three-part deliverable. The data inventory table mapping each data category to collection method, purpose, legal basis, third parties, and retention. Jurisdiction analysis identifying GDPR applicability and CCPA threshold monitoring. Red flags for Mixpanel IP collection needing disclosure and DPA, and missing cookie consent mechanism for EU users.
 
 ### Example 2: Updating policy after adding AI features
-**User:** "We just added an AI assistant to our product that processes customer messages to generate responses. Do we need to update our privacy policy?"
+**User:** "We added an AI assistant that processes customer messages. Do we need to update our privacy policy?"
 
-**Good output excerpt:**
-> **Yes, update required.** AI processing of customer messages introduces new data processing that must be disclosed. Key additions needed:
-> - New data category: message content processed by AI models.
-> - New purpose: automated response generation.
-> - New third party: if using OpenAI/Anthropic API, disclose the AI provider as a sub-processor.
-> - New legal basis analysis: legitimate interest or consent depending on how integral the AI feature is.
-> - GDPR Art. 22 consideration: if the AI makes decisions with legal or significant effects, users have the right not to be subject to solely automated decision-making.
+**Good output:** Identifies the new data processing (message content processed by AI models), new third party (AI provider as sub-processor), new legal basis analysis needed, and GDPR Art. 22 consideration for automated decision-making. Provides the specific policy sections that need updating with draft language.
 
 ---
 
-**Disclaimer:** This skill generates draft privacy policies and compliance guidance for educational and planning purposes only. It does not constitute legal advice. Privacy law is jurisdiction-specific and evolving rapidly. Always have a qualified attorney licensed in your relevant jurisdictions review your final privacy policy before publication. Regulatory non-compliance can result in significant fines (up to 4% of global annual revenue under GDPR).
+**Disclaimer:** This skill generates draft privacy policies and compliance guidance for educational and planning purposes only. It does not constitute legal advice. Always have a qualified attorney licensed in your relevant jurisdictions review the final privacy policy before publication. Regulatory non-compliance can result in significant fines (up to 4% of global annual revenue under GDPR).

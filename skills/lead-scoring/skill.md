@@ -1,6 +1,6 @@
 ---
 name: lead-scoring
-trigger: When a founder needs to define their ideal customer profile, build a lead scoring model, set MQL criteria, or design pipeline stages. Activate when the user mentions lead scoring, ICP, MQL, SQL, lead qualification, or pipeline design.
+trigger: When a founder needs to qualify inbound leads, define their ICP, build a lead scoring model, set MQL criteria, or route prospects through pipeline stages. Activate when the user mentions lead scoring, ICP, MQL, SQL, lead qualification, inbound leads, or pipeline design.
 related: [cold-outreach, sales-script]
 reads: [startup-context]
 ---
@@ -8,142 +8,103 @@ reads: [startup-context]
 # Lead Scoring
 
 ## When to Use
-Activate when a founder needs to define who their best customers are, build a system for scoring and prioritizing leads, establish MQL/SQL definitions, or design pipeline stages. Also use when the user says "which leads should I focus on," "how do I qualify leads," "define my ICP," "set up lead scoring," or "my pipeline is a mess."
+Activate when a founder needs to evaluate inbound prospects against ICP criteria, build a systematic qualification workflow, score and route leads, establish MQL/SQL definitions, or design pipeline stages. Also use when the user says "which leads should I focus on," "how do I qualify inbound leads," "define my ICP," "set up lead scoring," or "how do I route leads to the right person."
 
 ## Context Required
 From `startup-context` or the user:
-- **GTM motion** — Product-led, sales-led, or hybrid
-- **ACV range** — Average contract value or deal size
-- **Current customers** — Who are your best customers today and why
-- **Lead volume** — How many leads per month do you generate
-- **Sales cycle** — Average days from first touch to closed-won
-- **Current stack** — CRM, marketing automation, enrichment tools
-- **Current state** — How leads are managed today. What is working and what is broken
+- **ICP definition** — Who is the ideal customer (company size, industry, stage, geography, use case)
+- **Lead sources** — Where inbound leads come from (website, events, content, referrals)
+- **CRM and tooling** — Current stack for managing leads and deals
+- **Current customers** — Who are the best existing customers and why
+- **Pipeline data** — Existing deals, active customers, prior contacts
+- **Sales capacity** — Who handles leads and what is their bandwidth
 
 Work with whatever the user provides. If they have a clear problem area, start there. Do not block on missing inputs.
 
 ## Workflow
-1. **Gather context** — Read startup-context if available. Ask about current customers, lead sources, and pain points in the qualification process.
-2. **Define the ICP** — Build the ideal customer profile based on best existing customers and target market data.
-3. **Design explicit scoring** — Assign point values to firmographic and demographic attributes (who they are).
-4. **Design implicit scoring** — Assign point values to behavioral signals (what they do).
-5. **Add negative scoring** — Define disqualifying signals that subtract points or auto-disqualify.
-6. **Set MQL threshold** — Define the score at which a lead is marketing-qualified and handed to sales.
-7. **Design pipeline stages** — Define stage entry/exit criteria, owners, and SLAs from MQL through closed-won.
+1. **Load ICP and configuration** — Read startup-context if available. Establish the qualification criteria across company attributes, person attributes, and use case fit.
+2. **Parse the lead data** — Accept leads in any format (CSV, list, CRM export, single name). Identify data gaps and flag what needs enrichment.
+3. **Check pipeline overlap** — Before scoring, check for existing customers (route to upsell), active deals (flag for sales coordination), and prior contacts (note history). Pipeline overlaps are routing flags, not disqualifiers.
+4. **Score company fit** — Evaluate against company size, industry, stage, geography, and use case alignment. Weight each dimension based on what predicts closed-won deals.
+5. **Score person fit** — Evaluate title, seniority, department, and decision-making authority. A perfect company with the wrong contact still needs routing, not rejection.
+6. **Score use case alignment** — Connect the lead's inferred intent to specific product capabilities. Inbound signals (demo requests, pricing page visits) tip borderline cases toward qualification.
+7. **Generate composite score and verdict** — Produce a 0-100 composite score and assign a routing recommendation.
+8. **Export structured output** — Deliver results in a table or CSV with all qualification data, scores, and routing.
 
 ## Output Format
 Deliver these documents:
-1. **ICP definition** — Firmographic and demographic criteria with priority tiers
-2. **Scoring model** — Complete point-value table for explicit, implicit, and negative signals with MQL threshold
-3. **Pipeline stage document** — Stage definitions with entry/exit criteria, owners, and SLAs
-4. **Implementation notes** — Platform-specific guidance if CRM is known
+1. **Scored lead report** — Each lead with composite score (0-100), sub-scores by dimension, verdict category, and routing recommendation
+2. **ICP definition** — Firmographic and demographic criteria with priority tiers
+3. **Scoring model** — Complete point-value table for company, person, and use case dimensions with threshold definitions
+4. **Pipeline routing rules** — How each verdict category gets handled
 
 ## Frameworks & Best Practices
 
-### ICP Definition Framework
+### Verdict Categories
+Assign every lead to one of these routing buckets based on composite score:
 
-Build your ICP from your best existing customers, not your aspirations. Analyze closed-won deals and identify patterns across five dimensions: company size, industry, revenue, tech stack, and geography.
+| Verdict | Score | Action |
+|---------|-------|--------|
+| **Qualified — Hot** | 85-100 | Immediate sales outreach. High urgency, strong fit. |
+| **Qualified — Warm** | 75-84 | Active pursuit within 24 hours. Good fit, moderate urgency. |
+| **Borderline** | 50-74 | Requires human review. Qualified with caveats — flag specific concerns. |
+| **Near Miss** | 30-49 | Nurture sequence or referral opportunity. Not ready for sales. |
+| **Disqualified** | 0-29 | Does not fit ICP. Includes competitor employees. Polite decline. |
 
-- **Tier 1 (perfect fit):** Matches all 5 dimensions. Prioritize aggressively.
-- **Tier 2 (good fit):** Matches 3 of 5 dimensions with strong engagement signals. Worth pursuing.
-- **Tier 3 (marginal fit):** Matches 1-2 dimensions. Lower priority, typically lower LTV or longer cycle.
+### Handling Unknown Data
+Score unknown dimensions at 30 points (out of 100 for that dimension). This acknowledges data absence without automatically rejecting leads. A lead missing company size data is not the same as a lead with the wrong company size. Flag unknowns for enrichment rather than penalizing them.
 
-### Explicit Scoring (Fit) — Who They Are
+### Inbound Intent Premium
+Prospects who initiate contact demonstrate genuine interest. For borderline cases (scores 50-74), inbound signals should tip the scoring decision toward qualification. A borderline lead who requested a demo is a better prospect than a slightly-above-threshold lead who has never engaged.
 
-Assign points based on how closely the lead matches your ICP:
+### Pipeline Overlap Routing
+Before scoring, check for overlaps and route accordingly:
+- **Existing customer** — Route to account management for upsell/expansion conversation
+- **Active deal in pipeline** — Flag for the assigned sales rep to coordinate, do not create a duplicate
+- **Prior contact with no deal** — Note history and score normally, but include context for the sales rep
+- **Competitor employee** — Auto-disqualify and log for competitive intelligence
 
-| Attribute | Strong Match | Partial Match | No Match |
-|-----------|-------------|---------------|----------|
-| Company size | +20 | +10 | 0 |
-| Industry | +15 | +5 | 0 |
-| Job title/seniority | +20 | +10 | 0 |
-| Department | +10 | +5 | 0 |
-| Geography | +10 | +5 | 0 |
-| Tech stack | +10 | +5 | 0 |
+### Multi-Dimensional Scoring
 
-**Total possible fit score: ~85 points**
+**Company evaluation** — Score against: company size, industry vertical, company stage/funding, geography, and use case fit. Weight dimensions based on which most predict closed-won deals in your data.
 
-### Implicit Scoring (Engagement) — What They Do
+**Person assessment** — Score against: job title, seniority level, department alignment, and decision-making authority. A Director of Engineering at a perfect-fit company scores higher than a junior developer at the same company.
 
-Assign points based on buying-intent signals:
+**Use case alignment** — Map the lead's stated or inferred needs to specific product capabilities. Strong alignment on the core use case matters more than broad but shallow fit.
 
-| Behavior | Points | Rationale |
-|----------|--------|-----------|
-| Visited pricing page | +15 | Strongest intent signal on most websites |
-| Requested demo/trial | +20 | Direct buying intent |
-| Visited case studies | +10 | Evaluating social proof |
-| Downloaded gated content | +5 | Interest, but not necessarily buying intent |
-| Attended webinar | +5 | Engagement, but could be educational |
-| Opened 3+ emails | +5 | Active engagement with nurture |
-| Clicked email CTA | +8 | Deeper engagement |
-| Returned to site 3+ times | +10 | Sustained interest |
-| Visited careers page | -10 | Likely a job seeker, not a buyer |
-
-**Total possible engagement score: ~78 points**
-
-### Negative Scoring — Disqualifying Signals
-
-Subtract points or auto-disqualify for these signals:
-
-| Signal | Action |
-|--------|--------|
-| Competitor email domain | Auto-disqualify |
-| Student or personal email (gmail, yahoo) | -15 points |
-| Job title: intern, student, assistant | -20 points |
-| Unsubscribed from emails | -10 points |
-| Company size below minimum | -15 points |
-| No engagement in 90 days | Decay: -5 points/month |
-| Spam complaint | Auto-disqualify |
-| Known bad-fit industry | -15 points |
-
-### MQL Definition
-
+### Dual-Threshold MQL Definition
 An MQL requires BOTH fit and engagement. Neither alone is sufficient.
-
-**Recommended threshold model:**
 - Minimum fit score: 30 points (must have basic ICP match)
 - Minimum engagement score: 20 points (must show some intent)
 - Combined minimum: 60 points
 
 A perfect-fit company that never engages is not an MQL. A student downloading every whitepaper is not an MQL. The dual-threshold prevents both failure modes.
 
-### Pipeline Stage Design
-
-| Stage | Entry Criteria | Exit Criteria | Owner | SLA |
-|-------|---------------|---------------|-------|-----|
-| **Lead** | Identified contact with basic info | Meets minimum fit criteria | Marketing | Enrich within 24 hrs |
-| **MQL** | Passes fit + engagement threshold | Sales accepts or rejects | Marketing -> Sales | Sales responds within 4 hrs |
-| **SQL** | Sales accepts and qualifies via conversation | Opportunity created or recycled | Sales | Qualify within 48 hrs |
-| **Discovery** | Pain confirmed, stakeholders identified | Demo scheduled | Sales | Demo within 7 days |
-| **Evaluation** | Demo completed, requirements confirmed | Proposal requested or rejected | Sales | Proposal within 3 days |
-| **Proposal** | Proposal delivered and reviewed | Terms agreed or negotiation | Sales | Decision within 14 days |
-| **Closed Won** | Contract signed | Handoff to onboarding | Sales -> CS | Kickoff within 5 days |
-| **Closed Lost** | Deal lost | Post-mortem logged with reason | Sales | Log within 24 hrs |
-
 ### Maintaining and Iterating
-- **Recalibrate quarterly.** Pull closed-won data and check if your model correctly predicted winners. Buyer behavior changes.
+- **Recalibrate quarterly.** Pull closed-won data and check if the model correctly predicted winners.
 - **Watch for score inflation.** If 80% of leads become MQLs, the threshold is too low.
 - **Track MQL-to-SQL acceptance rate.** If sales rejects more than 30% of MQLs, adjust the model.
-- **Start simple.** Begin with 5-10 signals and iterate. Score your first 50-100 leads by hand before automating.
-- **Founder intuition matters.** If a lead "feels" right but scores low, your model may be missing a signal.
-- **Speed-to-lead is critical.** Contact within 5 minutes is 21x more likely to qualify. After 24 hours, the lead is cold.
+- **Start simple.** Score the first 50-100 leads by hand before automating.
+- **Speed-to-lead is critical.** Contact within 5 minutes is 21x more likely to qualify.
 
 ## Related Skills
-- `cold-outreach` — use the ICP and scoring to prioritize who to reach out to first
-- `sales-script` — use pipeline stage definitions to prepare the right script for each stage
+- `cold-outreach` — Use the ICP and scoring to prioritize who to reach out to first
+- `sales-script` — Use pipeline stage definitions to prepare the right script for each stage
 
 ## Examples
 
-**Example prompt:** "We are a B2B SaaS startup selling to mid-market engineering teams. Our best customers are 100-500 person SaaS companies. Help me set up lead scoring."
+**Example prompt:** "We get 200 inbound leads a month from our website and events. Most go nowhere. Help me build a system to score and route them."
 
-**Good ICP output snippet:**
-> ### Tier 1 — Ideal Customer Profile
-> - **Company size:** 100-500 employees
-> - **Industry:** SaaS, fintech, or developer tools
-> - **Target role:** VP Engineering, Engineering Manager, Staff+ Engineer
-> - **Tech stack signals:** Uses GitHub, Datadog, or PagerDuty (indicates mature engineering org)
-> - **Geography:** US, Canada, UK (primary markets)
-> - **Funding:** Series A through Series C (budget available, still growing)
+**Good output excerpt:**
+> ### Lead Qualification Report (Sample)
+> | Lead | Company Score | Person Score | Use Case Score | Composite | Verdict |
+> |------|-------------|-------------|---------------|-----------|---------|
+> | Jane Smith, VP Eng @ Acme (200 emp, SaaS) | 88 | 85 | 90 | 88 | Qualified — Hot |
+> | Bob Lee, Developer @ TinyCo (15 emp, Agency) | 35 | 40 | 50 | 40 | Near Miss |
+> | Unknown Title @ MegaCorp (10K emp, Finance) | 60 | 30 (unknown) | 45 | 47 | Near Miss — Enrich |
+>
+> **Routing:** Jane gets immediate sales outreach (AE assigned within 1 hour). Bob enters nurture sequence. MegaCorp lead flagged for enrichment — title and use case data needed before routing.
 
-**Good MQL definition output snippet:**
-> A lead becomes MQL when fit score >= 30, engagement score >= 20, combined score >= 60, and no disqualifying signals are present.
+**Example prompt:** "A lead from a current customer's company just filled out our demo form. What do I do?"
+
+**Good output approach:** Flag the pipeline overlap — check if this is a new department/team or the same buyer. If same account, route to the existing account manager for upsell coordination. If new department, score normally but include account context. Never create a duplicate deal.

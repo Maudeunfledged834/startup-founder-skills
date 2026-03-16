@@ -1,6 +1,6 @@
 ---
 name: launch-strategy
-trigger: When the user needs to plan or execute a product launch — including channel selection, phased rollout, Product Hunt launch, or post-launch growth tactics.
+trigger: When the user needs to plan or execute a product launch — including pre-launch content sequences, launch funnels, JV/affiliate launches, cart open/close strategy, or evergreen launch funnels.
 related: [content-strategy, social-content, email-marketing, landing-page]
 reads: [startup-context]
 ---
@@ -8,79 +8,101 @@ reads: [startup-context]
 # Launch Strategy
 
 ## When to Use
-- Planning a launch for a new product, major feature, or significant update.
-- Deciding which channels to use for launch distribution.
-- Structuring a phased rollout (alpha, beta, early access, public).
-- Preparing for a Product Hunt launch.
-- Building pre-launch buzz and a waitlist.
-- Planning post-launch activities to sustain momentum.
+- Planning a launch for a new product, course, program, or major feature.
+- Designing a pre-launch content sequence to build anticipation and desire.
+- Structuring a launch funnel with cart open/close mechanics.
+- Preparing a JV/affiliate launch with partner recruitment.
+- Building an evergreen launch funnel for ongoing automated sales.
+- Deciding between seed launch, internal launch, JV launch, or evergreen launch.
+- Applying the Product Launch Formula or similar sequenced launch methodology.
 
 ## Context Required
-- **From startup-context**: product description, ICP, value proposition, competitive positioning, stage, existing audience size, brand assets.
-- **From the user**: what is being launched (new product, feature, rebrand, pivot), launch timeline, available budget, team capacity, existing audience/list size, whether Product Hunt is being considered, any partnerships or press contacts available, previous launch experience.
+- **From startup-context:** product description, target audience, value proposition, existing audience size, email list size and engagement, brand voice.
+- **From the user:** what is being launched and the core transformation it provides, launch type (seed, internal, JV, evergreen), launch timeline and cart open/close dates, pricing and offer stack (product + bonuses + guarantee), existing assets (testimonials, case studies, content), budget for ads or affiliate commissions, team capacity, and any previous launch experience.
 
 ## Workflow
-1. **Apply the ORB Framework** — Categorize all available distribution channels:
-   - **Owned channels**: Assets you control completely. Email list, blog, social accounts, existing user base, website, podcast, community/Discord. These are your most reliable channels — build them before you need them.
-   - **Rented channels**: Platforms where you have a presence but do not control distribution. Product Hunt, social media algorithms, SEO, app store listings, marketplace profiles. Reach is subject to platform rules and algorithm changes.
-   - **Borrowed channels**: Other people's audiences accessed through relationships. Guest posts, podcast interviews, newsletter sponsorships, influencer partnerships, press coverage, co-marketing, community cross-posting. Highest potential reach but requires relationship investment.
-   - Map every available channel into these three categories. Prioritize Owned first (highest reliability), then Borrowed (highest reach potential), then Rented (useful amplifier).
-2. **Choose the 5-Phase Launch Model** — Not every launch needs all phases, but every launch should be intentional about which phases to include:
-   - **Phase 1: Internal Launch (weeks -8 to -6)** — Share with the team, advisors, and close friends. Get candid feedback, fix critical bugs, refine messaging. This is the "friends and family" round.
-   - **Phase 2: Alpha Launch (weeks -6 to -4)** — Invite 20-50 hand-picked users who match the ICP. Personal outreach only. Goal: validate core value proposition, identify friction, get testimonials. Every alpha user should feel special and invested.
-   - **Phase 3: Beta Launch (weeks -4 to -2)** — Expand to 100-500 users. Open applications or use a waitlist with criteria. Goal: stress-test infrastructure, refine onboarding, build social proof. Start collecting case studies and usage data.
-   - **Phase 4: Early Access Launch (weeks -2 to 0)** — Open to the full waitlist. Create urgency with limited-time pricing, founding member perks, or exclusive features. Goal: build momentum, generate word-of-mouth, create launch-day anticipation.
-   - **Phase 5: Full Public Launch (day 0 and beyond)** — Coordinate across all channels simultaneously. This is the big push. Product Hunt, press outreach, social blitz, email blast, community posting, partner amplification.
-3. **Build the pre-launch engine** — In the weeks before launch:
-   - **Waitlist with viral mechanics**: Give waitlist members a unique referral link. Reward referrals with early access, exclusive features, or priority support. Tools: Viral Loops, Waitlist API, or custom-built.
-   - **Teaser content**: Share behind-the-scenes building content on social (building in public). Reveal features one at a time. Create anticipation without revealing everything.
-   - **Warm up borrowed channels**: Reach out to potential partners, podcasters, newsletter writers, and journalists 4-6 weeks before launch. Offer exclusive early access or unique angles.
-   - **Prepare launch assets**: Landing page, demo video (60-90 seconds), social media graphics, email announcements, press kit, Product Hunt assets.
-4. **Execute launch day** — Coordinate all channels within a tight window:
-   - Send email to full list at launch time.
-   - Post on all social channels within 1 hour.
-   - Activate borrowed channels (partners post, influencers share).
-   - If Product Hunt: launch at 12:01 AM PT, engage with every comment throughout the day.
-   - Monitor for issues (site down, signup flow broken, billing errors) — have the team on standby.
-   - Respond to every comment, tweet, and email within 2 hours. Launch day engagement drives algorithmic amplification.
-5. **Product Hunt specific tactics** (if applicable):
-   - **Timing**: Launch Tuesday through Thursday. Avoid Mondays (competitive) and Fridays (low traffic).
-   - **Preparation**: Have a Hunter with a strong following submit the product, or self-submit with a polished maker comment.
-   - **Assets**: Compelling tagline (under 60 characters), gallery images (1200x760px, show the product in action), a 1-minute video, and a strong first comment from the maker explaining the why behind the product.
-   - **Engagement**: Respond to every single comment personally. Upvotes matter, but comment engagement drives ranking more than raw votes. Never ask for upvotes explicitly (it violates PH guidelines and gets you penalized).
-   - **Community support**: Notify your existing community and ask them to check out the Product Hunt page, comment with feedback, and share if they find it useful. Authentic engagement, not vote brigading.
-6. **Post-launch sustenance** — The launch is not the finish line. Plan for 30 days after:
-   - **Week 1**: Follow up with every lead. Share launch results publicly (transparency builds trust). Publish a "launch retrospective" blog post or thread.
-   - **Week 2-3**: Turn launch momentum into content. Compile user feedback into product improvements. Share early user stories and testimonials.
-   - **Week 4**: Evaluate launch metrics against goals. Plan the next launch (features launch regularly, not just products). Begin building for sustained growth channels (SEO, content, community).
+1. **Define the offer** — Clarify exactly what is being sold, the transformation it provides, the price point, and the offer stack (main product + bonuses). Total perceived value should be 10x+ the price.
+2. **Select the launch type** — Based on audience size, product maturity, and goals:
+   - **Seed Launch** — Small list, new product. Validate and get testimonials before going big.
+   - **Internal Launch** — Launch to your own list with a full pre-launch content sequence.
+   - **JV Launch** — Partner with affiliates who promote to their lists for broader reach.
+   - **Evergreen Launch** — Automated version of a live launch, triggered by opt-in.
+3. **Build the launch list** — Create a dedicated opt-in to identify the most interested prospects. This is your hottest segment. Build this list before creating pre-launch content.
+4. **Create pre-launch content (PLC)** — Develop 3-4 pieces of high-value content using the Sideways Sales Letter structure (see framework below). Each piece delivers standalone value while advancing the sale.
+5. **Write the launch email sequence** — Plan emails for every phase: PLC releases, cart open announcement, mid-launch social proof, final push urgency, and cart close deadline.
+6. **Build the sales page** — Create the sales page with offer stack, testimonials, guarantee, and countdown timer. The page should make the buying decision feel obvious.
+7. **Recruit JV partners (if applicable)** — Reach out to potential affiliates 4-6 weeks before launch. Provide swipe files, tracking links, and leaderboard incentives.
+8. **Execute the launch** — Release PLCs on schedule, open cart, send emails, engage with prospects in real time. Most sales happen in the last 24 hours.
+9. **Close the cart and debrief** — When the cart closes, it closes. Follow up with non-buyers. Analyze results and plan improvements for the next launch.
 
 ## Output Format
-- A complete launch plan document with: ORB channel map, selected phase model with timeline, pre-launch checklist, launch day hour-by-hour schedule, post-launch 30-day plan, and success metrics.
-- If Product Hunt is included: separate PH preparation checklist with asset requirements, timeline, and engagement plan.
+- A complete launch plan with: launch type selection and rationale, pre-launch content outlines (PLC 1-4), email sequence for each phase, sales page structure, launch timeline with specific dates, and success metrics.
+- If JV launch: affiliate recruitment plan, swipe file outlines, and leaderboard structure.
+- If evergreen: automation trigger design and ongoing optimization plan.
 
 ## Frameworks & Best Practices
-- **ORB balance**: The strongest launches activate all three channel types simultaneously. A launch relying only on Owned channels has a ceiling. A launch relying only on Borrowed channels has no foundation. Balance across all three.
-- **Launch is a muscle, not a moment**: The best companies launch constantly — new features, integrations, milestones, case studies. Each "launch" is a chance to re-enter the conversation. Build a launch cadence.
-- **Scarcity and urgency must be real**: Founding member pricing, limited beta slots, and early-access perks work — but only if they are genuine. Fake scarcity erodes trust permanently.
-- **The waitlist is the product**: A waitlist is not a holding pen. It is a relationship-building tool. Engage waitlist members with updates, ask for input, make them feel like insiders. By launch day, they should be advocates, not strangers.
-- **Press is overrated for startups**: Unless the story is genuinely newsworthy, press coverage rarely drives meaningful signups. Invest that energy in community outreach and partnerships instead. The exception: industry-specific outlets that your ICP actually reads.
-- **Day-two problem**: Most launches spike on day one and crater on day two. Plan content and activities for days 2-7 that sustain visibility: follow-up threads, "things we learned" posts, user spotlights, and secondary channel activation.
-- **Measure the right things**: Vanity metrics (pageviews, social impressions, Product Hunt rank) are fun but do not matter. Measure signups, activation rate, and revenue impact. A #5 Product Hunt finish with 200 activated users beats a #1 finish with 2,000 tire-kickers.
+
+### The Sideways Sales Letter (Jeff Walker's Product Launch Formula)
+Instead of one long sales letter, spread the sales message across 3-4 pieces of pre-launch content over 7-14 days. Each piece delivers value while building desire:
+
+- **PLC 1: The Opportunity** — Why now? What is possible? Introduce the new opportunity or approach. Share proof and results. Open a loop teasing PLC 2.
+- **PLC 2: The Transformation** — What will change when they embrace this? Deep dive with case studies, before/after results. Handle the "Is this for me?" objection. Tease PLC 3.
+- **PLC 3: The Ownership Experience** — What is it like to have this solution? Walk through the product. Testimonials about the experience. Handle the "Can I do this?" objection. Tease the offer.
+- **PLC 4: The Offer** — Full offer presentation with the value stack, bonuses, guarantee, and a clear call to action with urgency.
+
+### Results in Advance (Frank Kern)
+Give away your best material for free during pre-launch. When you deliver massive value before asking for the sale, you build reciprocity and prove competence. Do not hold back your best content out of fear — generosity in pre-launch drives sales at cart open.
+
+### Launch Timeline Template
+
+| Phase | Timing | Activities |
+|-------|--------|------------|
+| Pre-Pre-Launch | 4-6 weeks before | Seed the idea, build launch list, survey audience |
+| PLC 1 | 10-14 days before | Release Opportunity content |
+| PLC 2 | 7-10 days before | Release Transformation content |
+| PLC 3 | 4-7 days before | Release Ownership content |
+| PLC 4 / Cart Open | Launch day | Release Offer, open cart |
+| Cart Open | Days 1-3 | Daily emails, testimonials, FAQ |
+| Final Push | Days 4-5 | Multiple daily emails, urgency, countdown |
+| Cart Close | Days 5-7 | Final call emails, cart closes (for real) |
+| Post-Launch | Days 8-14 | Thank buyers, follow up non-buyers, debrief |
+
+### S-Tier Launch Tactics (Must-Do)
+1. **Create 3-4 pieces of pre-launch content.** Do not just announce the product. Build desire over 7-14 days.
+2. **Build a launch list before launching.** A dedicated opt-in identifies your hottest leads.
+3. **Create real scarcity.** Use a genuine cart close date. When it closes, it closes. Fake deadlines destroy trust permanently.
+4. **Stack your offer.** Present bonuses that eliminate objections. Total perceived value should be 10x+ price.
+5. **Send multiple emails during cart open.** Send 2-3 emails per day during the final 48 hours. Most sales happen in the last 24 hours.
+6. **Do a seed launch first.** For new products, launch to a small group to get testimonials and refine the offer before going big.
+
+### A-Tier Launch Tactics (Highly Effective)
+1. **Recruit JV partners** with audiences matching your ideal customer. Provide swipe files and leaderboard prizes.
+2. **Create a launch event** (webinar, challenge, live series) to build engagement during pre-launch.
+3. **Implement behavioral triggers.** Track who watches PLCs, clicks, and visits the sales page. Send different follow-up based on behavior.
+4. **Use countdown timers** on the sales page and in emails for visual urgency.
+5. **Plan your post-launch sequence.** Non-buyers from this launch are warm leads for the next one.
+
+### Common Mistakes to Avoid
+- **Launching without pre-launch content** — Announcing a product without building anticipation leads to weak sales.
+- **Fake scarcity** — Extending a deadline after saying it is final destroys trust.
+- **Only emailing once during launch** — You need multiple touchpoints. Under-emailing is the most common launch mistake.
+- **Skipping the seed launch** — Launching an unvalidated product to a big list is high risk.
+- **No post-launch follow-up** — Non-buyers are warm leads. Stay in touch.
 
 ## Related Skills
-- `content-strategy` — when the launch needs supporting content (blog posts, guides, case studies) to sustain post-launch momentum
-- `social-content` — when launch messaging needs to be adapted for social platforms and coordinated across channels
-- `email-marketing` — when the launch relies on email sequences (waitlist nurture, launch announcement, post-launch follow-up)
-- `landing-page` — when the launch requires a dedicated landing page optimized for conversion
+- `content-strategy` — When the launch needs supporting content to sustain post-launch momentum
+- `social-content` — When launch messaging needs to be adapted for social platforms
+- `email-marketing` — When the launch relies on email sequences for waitlist nurture and follow-up
+- `landing-page` — When the launch requires a dedicated sales page optimized for conversion
 
 ## Examples
 
-**Example 1: Full product launch**
-> "We're launching our SaaS product in 6 weeks. We have 800 email subscribers, 2,000 Twitter followers, and a handful of beta users. How do we plan this?"
+**Example 1: Online course launch**
+> "I have a 5,000-person email list and a new course on data analytics. Help me plan the launch."
 
-Good output: ORB channel map identifying 3 owned channels (email list, Twitter, blog), 2 rented (Product Hunt, LinkedIn), and 4 borrowed (2 podcast interviews, 1 newsletter sponsorship, 1 partner co-promotion). Recommends skipping Phase 1-2 (already done through beta), executing Phase 3 during weeks 1-3 (expand beta to 200 users, collect testimonials), Phase 4 during weeks 4-5 (waitlist early access with founding member pricing), and Phase 5 on week 6 (coordinated public launch with Product Hunt on Tuesday). Includes pre-launch content calendar, launch day hour-by-hour schedule, and 30-day post-launch plan.
+Good output: Recommend an internal launch with full PLC sequence. PLC 1 (10 days before): video on "The 3 Myths Holding Back Your Data Career." PLC 2 (7 days before): case study of a student who achieved a specific result. PLC 3 (4 days before): walkthrough of the course modules and ownership experience. Cart open for 5 days with a fast-action bonus (first 48 hours get a live Q&A session). Email sequence: 2 emails per PLC release, daily emails during cart open, 3 emails on cart close day. Target: $100-150K launch based on list size and typical conversion rates.
 
-**Example 2: Feature launch for existing product**
-> "We just built a major integration. How do we launch it to our existing users and attract new ones?"
+**Example 2: SaaS product with seed launch**
+> "We have a new SaaS tool and only 200 beta users. Should we do a big launch or start small?"
 
-Good output: Recommends a lighter 2-phase approach (Early Access for existing users, then Public for new audience). ORB map focusing on owned channels (in-app announcement, email to users, changelog post) and borrowed channels (co-marketing with the integration partner, guest post on partner's blog). Social content batch of 5 posts announcing the integration. Email sequence: teaser email to existing users, launch email with demo video, follow-up with early adopter use cases. No Product Hunt for a feature launch. Success metric: integration adoption rate among existing users plus new signups attributing to the integration.
+Good output: Recommend a seed launch first — offer the product to 50-100 beta users at founding member pricing to validate demand, collect testimonials, and refine the offer. Use their feedback to build PLC content for the internal launch 6-8 weeks later. Only consider a JV launch after the internal launch proves the funnel converts.

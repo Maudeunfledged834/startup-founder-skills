@@ -8,75 +8,72 @@ reads: [startup-context]
 # Cold Outreach
 
 ## When to Use
-Activate when a founder needs to write cold emails or cold LinkedIn messages to prospects, potential customers, investors, or strategic contacts. Also use when the user says "nobody replies to my emails," "how do I reach out to X," "write me a cold email," or "help with outbound."
+Activate when a founder needs to write cold emails or LinkedIn messages to prospects, potential customers, investors, or strategic contacts. Also use when the user says "nobody replies to my emails," "how do I reach out to X," "write me a cold email," or "help with outbound."
 
 ## Context Required
 From `startup-context` or the user:
-- **Target recipient** — Role, company, why them specifically
-- **Desired outcome** — Meeting, reply, intro, demo, investment conversation
-- **Value proposition** — The specific problem you solve for people like them
-- **Proof points** — Results, traction, case studies, credibility signals
-- **Research signals** — Funding rounds, hiring posts, LinkedIn activity, product launches, tech stack changes
+- **Target prospect** — Name, role, company, and why them specifically
+- **Research signals** — Recent news (funding, launches, hires), LinkedIn activity, company growth data, or role/industry context
+- **Sender positioning** — Who you are, what you offer, your unique credibility
+- **Platform** — Email, LinkedIn, or both
+- **Batch size** — Single prospect or multi-prospect campaign
 
-Work with whatever the user provides. A strong signal and clear value prop is enough to write. Note what would strengthen the message but do not block on missing inputs.
+Work with whatever the user provides. A strong research signal and clear value prop is enough to draft. Note what would strengthen the message but do not block on missing inputs.
 
 ## Workflow
-1. **Gather context** — Read startup-context if available. Ask for missing info on target, value prop, and proof points.
-2. **Research the recipient** — Identify a personalization hook: something they said, did, or published that connects to the problem you solve.
-3. **Select channel and framework** — Choose email, LinkedIn, or both. Pick a structure that fits the situation (see Frameworks below).
-4. **Draft the message** — Write the outreach following the principles below. Keep emails under 125 words. Keep LinkedIn messages under 300 characters for connection requests, under 500 characters for InMails.
-5. **Write follow-up sequence** — Draft 3-4 follow-ups for email, each adding a new angle. For LinkedIn, draft 2-3 follow-ups.
-6. **Quality check** — Read aloud. Verify it sounds human, has one clear ask, and the personalization connects to the problem.
+1. **Gather context** — Read startup-context if available. Ask for missing info on prospect, value prop, and proof points.
+2. **Research the prospect** — Conduct web searches for recent signals. The core principle: 10 minutes of research transforms a cold message into a warm one. Rank signals by strength:
+   - **Tier 1 (strongest):** Recent news — funding rounds, product launches, key hires
+   - **Tier 2:** LinkedIn activity — posts, comments, job changes
+   - **Tier 3:** Company growth signals — hiring trends, tech stack changes
+   - **Tier 4 (weakest):** Role/industry awareness only
+3. **Assign personalization tier** — Based on research signals found:
+   - **Tier 1 (custom):** Named signals across multiple research sources — fully personalized message
+   - **Tier 2 (templated + personalized):** Company info and role context — template with personalized elements
+   - **Tier 3 (volume template):** No signals found — use volume approach with strong value prop
+4. **Select mode based on scope:**
+   - **Quick:** Single connection request + follow-up for one prospect
+   - **Standard:** Four-touch sequence for a prospect (default)
+   - **Deep:** Multi-prospect system with A/B variant messages
+5. **Draft the sequence** — Write messages following the structure and rules below.
+6. **Self-critique pass** — Before delivering, validate that personalization connects to the problem. If you remove the personalized opening and the message still makes sense, the personalization is not working. Rewrite.
 
 ## Output Format
 Deliver all of the following:
-- **Subject line** (email) or **connection note** (LinkedIn) — short, lowercase, no gimmicks
-- **Primary message** — the full outreach text
-- **Follow-up sequence** — 3-4 follow-ups with suggested timing and a new angle per touch
-- **Personalization notes** — what to customize per recipient if sending to multiple people
+- **Connection request** (LinkedIn, max 300 characters) or **Subject line** (email, 2-4 words, lowercase)
+- **Primary message** — the full outreach text (emails under 125 words, InMails under 500 characters)
+- **Follow-up sequence** — with timing and a new angle per touch
+- **Personalization notes** — what to customize per recipient if sending to multiple prospects
+- **Tier label** — which personalization tier this message uses and why
 
 ## Frameworks & Best Practices
 
-### Core Writing Principles
-- **Write like a peer, not a vendor.** The message should read like it came from someone who understands their world. Use contractions. If it sounds like marketing copy, rewrite it.
-- **Every sentence must earn its place.** If a sentence does not move the reader toward replying, cut it.
-- **Personalization must connect to the problem.** If you remove the personalized opening and the email still makes sense, the personalization is not working.
-- **Lead with their world, not yours.** "You/your" should dominate over "I/we." Do not open with who you are or what your company does.
-- **One ask, low friction.** Interest-based CTAs ("Worth exploring?" / "Would this be useful?") beat meeting requests. One CTA per message.
+### The Core Principle
+The word "cold" is the problem. Every message should feel like it comes from someone who understands the prospect's world. Research is what makes that possible.
+
+### Message Structure
+- **Connection request (LinkedIn):** Max 300 characters. Reference something specific. Never pitch in the request.
+- **First message (24-48 hours after connection):** "Thanks for connecting" + bridge to a research signal + value statement + question. Keep it conversational.
+- **Follow-up 1 (Day 7):** Introduce a new angle — different problem, proof point, or insight.
+- **Follow-up 2 (Day 14):** Share something valuable (article, data, framework) with a soft reconnect.
+- **Break-up (Day 21):** Professional close — "Closing the loop. If timing is ever right, I'm here."
+
+### Writing Principles
+- **Write like a peer, not a vendor.** Use contractions. If it sounds like marketing copy, rewrite it.
+- **Every sentence must earn its place.** If it does not move toward a reply, cut it.
+- **Lead with their world, not yours.** "You/your" should dominate over "I/we."
+- **One ask, low friction.** Interest-based CTAs ("Worth exploring?") beat meeting requests.
+- **Every message must reference a specific research signal** or explicitly default to Tier 3. This is a hard rule.
 
 ### Email Frameworks
 - **Observation-Problem-Proof-Ask** — You noticed X, which usually means Y challenge. We helped Z with that. Interested?
-- **Question-Value-Ask** — Struggling with X? We do Y. Company Z saw [result]. Worth a look?
 - **Trigger-Insight-Ask** — Congrats on X. That usually creates Y challenge. We have helped similar companies. Curious?
 - **Story-Bridge-Ask** — [Similar company] had [problem]. They [solved it this way]. Relevant to you?
 
-### LinkedIn-Specific Rules
-- **Connection requests** — Keep under 300 characters. Reference something specific (mutual connection, shared experience, their content). Do not pitch in the connection request.
-- **First message after connecting** — Wait 1-2 days. Reference why you connected. Offer value before asking for anything.
-- **InMail** — Treat like a cold email but shorter. LinkedIn InMails with under 400 characters get 22% higher response rates.
-- **Engage before reaching out** — Comment thoughtfully on 2-3 of their posts before sending a connection request. This warms the outreach significantly.
-
-### Subject Lines (Email)
+### Subject Lines
 - 2-4 words, lowercase, no punctuation tricks
-- Should look like an internal email ("quick question," "re: [their company]," "idea for [problem area]")
-- No product pitches, no urgency, no emojis, no first-name personalization
-
-### Follow-Up Cadence
-| Touch | Email Timing | LinkedIn Timing | Angle |
-|-------|-------------|-----------------|-------|
-| 1 | Day 0 | Day 0 | Primary value prop |
-| 2 | Day 3 | Day 4 | New proof point or case study |
-| 3 | Day 7 | Day 8 | Different angle on the problem |
-| 4 | Day 14 | Day 14 | Breakup — "closing the loop" |
-
-Each follow-up must add something new. "Just checking in" gives the reader no reason to respond.
-
-### Founder-Specific Advantages
-As a founder, you have unique outreach advantages over SDRs and sales reps:
-- **Founder-to-founder** or **founder-to-exec** emails get 2-3x higher reply rates than rep emails
-- Lead with your story and why you built the company — authenticity is your edge
-- You can offer things reps cannot: personal onboarding, product roadmap input, advisory relationships
-- Use "I built this because..." framing — it is more compelling than "our company offers..."
+- Should look like an internal email ("quick question," "re: [their company]")
+- No product pitches, no urgency, no emojis
 
 ### What to Avoid
 - Opening with "I hope this finds you well" or "My name is X and I work at Y"
@@ -88,6 +85,11 @@ As a founder, you have unique outreach advantages over SDRs and sales reps:
 - Sending identical templates with only the name swapped
 - Pitching in a LinkedIn connection request
 
+### Founder-Specific Advantages
+- Founder-to-founder or founder-to-exec emails get 2-3x higher reply rates
+- Lead with "I built this because..." — more compelling than "our company offers..."
+- Offer what reps cannot: personal onboarding, product roadmap input, advisory relationships
+
 ## Related Skills
 - `lead-scoring` — use to prioritize which prospects to reach out to first
 - `sales-script` — use when the outreach lands a meeting and you need a discovery call or demo script
@@ -96,7 +98,7 @@ As a founder, you have unique outreach advantages over SDRs and sales reps:
 
 **Example prompt:** "I need to reach out to VP Engineering at mid-market SaaS companies about our API monitoring tool. We reduced downtime by 73% for Acme Corp."
 
-**Good email output:**
+**Good email output (Standard mode, Tier 2):**
 > Subject: api alerts
 >
 > Hi [Name],
@@ -109,3 +111,6 @@ As a founder, you have unique outreach advantages over SDRs and sales reps:
 
 **Good LinkedIn connection request:**
 > Hi [Name] — saw the payments launch. We help engineering teams catch API failures before customers do. Would love to connect.
+
+**Follow-up (Day 7, new angle):**
+> Hi [Name], quick thought — after launches like yours, the #1 issue teams tell us about isn't downtime, it's the silent failures that slip through alerts. Happy to share what patterns we see across 50+ engineering teams if useful.

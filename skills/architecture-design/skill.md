@@ -1,6 +1,6 @@
 ---
 name: architecture-design
-trigger: When the user needs to design or evaluate system architecture — service boundaries, data models, API contracts, or infrastructure topology. Also activate when they say "design the system", "how should I architect this", or are planning a new major feature.
+trigger: When the user needs to design or evaluate system architecture — service boundaries, data models, API contracts, infrastructure topology, database selection, or dependency analysis. Also activate for "design the system", "how should I architect this", "monolith vs microservices", or architecture decision records.
 related: [tech-stack-eval, security-review, code-review]
 reads: [startup-context]
 ---
@@ -8,143 +8,132 @@ reads: [startup-context]
 # Architecture Design
 
 ## When to Use
-
-- The user is starting a new product or major feature and needs a system design
-- They need data model design, API contracts, or service boundary decisions
-- They want an Architecture Decision Record (ADR) for a technical choice
-- They are evaluating monolith vs microservices or hitting scaling pain
+- Starting a new product or major feature that needs system design
+- Choosing between monolith, modular monolith, microservices, or event-driven patterns
+- Selecting a database (SQL vs NoSQL vs specialized) for a new project
+- Analyzing dependencies for circular references, coupling issues, or outdated packages
+- Creating architecture diagrams (Mermaid, PlantUML, ASCII) for documentation or review
+- Writing Architecture Decision Records (ADRs) for technical choices
+- Evaluating scalability bottlenecks or planning capacity
 
 ## Context Required
-
-From `startup-context`: product description, tech stack, current state (prototype/beta/scaling), team size, expected scale (users, requests, data volume). If missing, ask:
+From `startup-context`: product description, tech stack, current state (prototype/beta/scaling), team size, expected scale (users, requests/sec, data volume). If missing, ask:
 - What does this system need to do? (core use cases)
 - What scale are you targeting? (users, requests/sec, data size)
 - What is your team size and backend experience level?
 - Are there hard constraints? (compliance, latency, budget, existing infra)
 
 ## Workflow
-
-1. **Gather requirements** — Identify functional requirements (use cases), non-functional requirements (latency, throughput, availability, consistency), and constraints (budget, team, compliance).
-2. **Map domain boundaries** — Use domain-driven design to identify bounded contexts. Each context is a candidate service or module boundary.
-3. **Choose architecture pattern** — Evaluate monolith-first vs microservices vs modular monolith using the decision framework below. For most early-stage startups, recommend modular monolith.
-4. **Design data model** — Produce an ER diagram in Mermaid. Define ownership: which service/module owns which entities. Identify shared data and how it will be accessed (API calls vs read replicas vs events).
-5. **Define API contracts** — Specify key endpoints with method, path, request/response shapes, and error codes. Use OpenAPI-style descriptions.
-6. **Draw system diagram** — Produce a Mermaid C4 or flowchart diagram showing components, data stores, external services, and communication patterns.
-7. **Write ADR** — Document the key decisions using the ADR format below.
-8. **Identify risks** — Call out single points of failure, data consistency risks, and scaling bottlenecks. Suggest mitigations.
+1. **Gather requirements** — Identify functional requirements (use cases), non-functional requirements (latency, throughput, availability, consistency), and constraints (budget, team size, compliance).
+2. **Run architecture assessment** — Analyze the existing project structure to detect current patterns (MVC, layered, hexagonal, microservices indicators), code organization issues (god classes, mixed concerns), and layer violations.
+3. **Analyze dependencies** — Examine the dependency tree for circular dependencies, coupling scores, and outdated packages across npm, Python, Go, or Rust projects.
+4. **Select architecture pattern** — Use the decision workflows below to match team size, deployment needs, and data boundaries to the right pattern. For most early-stage startups, recommend modular monolith.
+5. **Select database** — Match data characteristics, scale requirements, and consistency needs to the appropriate database technology using the selection workflow below.
+6. **Design data model** — Produce an ER diagram in Mermaid. Define entity ownership: which module/service writes, others read via API.
+7. **Define API contracts** — Specify key endpoints with method, path, request/response shapes, and error codes. Version from day one.
+8. **Generate architecture diagram** — Produce a Mermaid C4 or flowchart diagram showing components, data stores, external services, and communication patterns.
+9. **Write ADRs** — Document key decisions using the ADR format below.
+10. **Identify risks** — Call out single points of failure, data consistency risks, and scaling bottlenecks with mitigations.
 
 ## Output Format
-
 Deliver a structured architecture document with these sections:
-
-```markdown
-# Architecture: [System Name]
-
-## Requirements Summary
-- Functional: ...
-- Non-functional: ...
-- Constraints: ...
-
-## System Diagram
-(Mermaid diagram)
-
-## Domain Model
-(Mermaid ER diagram)
-
-## Service / Module Boundaries
-| Module | Responsibility | Owns Data | Exposes API |
-|--------|---------------|-----------|-------------|
-
-## API Contracts
-### [Endpoint Group]
-- `POST /resource` — description
-  - Request: { ... }
-  - Response: { ... }
-
-## Architecture Decision Records
-(ADR entries — see format below)
-
-## Risks & Mitigations
-| Risk | Impact | Likelihood | Mitigation |
-|------|--------|------------|------------|
-```
+- **Requirements Summary** — Functional, non-functional, and constraints
+- **Architecture Assessment** — Detected pattern with confidence, issues, recommendations
+- **System Diagram** — Mermaid C4 or flowchart (component, layer, or deployment view)
+- **Domain Model** — Mermaid ER diagram with entity ownership
+- **Module Boundaries** — Table: Module, Responsibility, Owns Data, Exposes API
+- **API Contracts** — Key endpoints with method, path, request/response shapes
+- **ADRs** — Architecture Decision Records for key choices
+- **Dependency Analysis** — Total deps, coupling score, circular deps, outdated packages
+- **Risks & Mitigations** — Table: Risk, Impact, Likelihood, Mitigation
 
 ## Frameworks & Best Practices
 
-### Monolith vs Microservices Decision Framework
+### Architecture Pattern Selection
 
-Use this scoring to recommend an architecture pattern:
+| Team Size | Recommended Starting Point |
+|-----------|---------------------------|
+| 1-3 developers | Modular monolith |
+| 4-10 developers | Modular monolith or service-oriented |
+| 10+ developers | Consider microservices |
 
-| Factor | Monolith Favored | Microservices Favored |
-|--------|------------------|-----------------------|
-| Team size | < 8 engineers | > 15 engineers |
-| Domain complexity | Single domain | Multiple distinct domains |
-| Scaling needs | Uniform load | Wildly different per service |
-| Deployment cadence | Weekly | Multiple times daily per team |
-| Stage | Pre-seed to Series A | Series B+ with proven PMF |
+| Requirement | Recommended Pattern |
+|-------------|-------------------|
+| Rapid MVP development | Modular Monolith |
+| Independent team deployment | Microservices |
+| Complex domain logic | Domain-Driven Design |
+| High read/write ratio difference | CQRS |
+| Audit trail required | Event Sourcing |
+| Third-party integrations | Hexagonal / Ports & Adapters |
 
-**Default recommendation for early startups:** Modular monolith with clear module boundaries that can be extracted later. Microservices add operational overhead that kills small teams.
+**Default for early startups:** Modular monolith with clear module boundaries that can be extracted later. Microservices add operational overhead that kills small teams.
+
+### Monolith vs Microservices Checklist
+
+**Choose Monolith when:** team is small (<10), domain boundaries are unclear, rapid iteration is the priority, shared database is acceptable.
+
+**Choose Microservices when:** teams can own services end-to-end, independent deployment is critical, different scaling requirements per component, domain boundaries are well understood.
+
+**Hybrid approach:** Start monolith. Extract a service only when a module has significantly different scaling needs, a team needs independent deployment, or technology constraints require separation.
+
+### Database Selection
+Structured data with relationships or ACID needs points to SQL. Flexible/evolving schema or document-oriented data points to NoSQL. Quick reference: PostgreSQL (default for most apps), MongoDB (document store), Redis (caching/sessions), DynamoDB (serverless auto-scaling), TimescaleDB (time-series), CockroachDB/Spanner (global distribution).
 
 ### ADR Format
-
-```markdown
-## ADR-NNN: [Title]
-- **Status:** Proposed | Accepted | Deprecated | Superseded
-- **Context:** What situation prompted this decision
-- **Decision:** What we chose and why
-- **Consequences:** Trade-offs accepted, what changes, what risks remain
-- **Alternatives considered:** What else was evaluated and why it lost
-```
+Use five fields: **Status** (Proposed/Accepted/Deprecated/Superseded), **Context** (what prompted the decision), **Decision** (what was chosen and why), **Consequences** (trade-offs and remaining risks), **Alternatives considered** (what else was evaluated and why it lost).
 
 ### Key Design Principles
-
-- Every entity has a clear owner (one service/module writes, others read via API)
+- Every entity has a clear owner (one module writes, others read via API)
 - Use UUIDs for primary keys if multi-service or future extraction is likely
 - Version APIs from day one (`/v1/resource`); paginate all list endpoints (cursor-based preferred)
-- Return consistent error shapes: `{ "error": { "code": "...", "message": "..." } }`
+- Consistent error shapes: `{ "error": { "code": "...", "message": "..." } }`
 - Design write operations for idempotency (idempotency keys)
-- Use synchronous calls (HTTP/gRPC) for queries needing immediate confirmation; use async events for notifications, analytics, and cross-service data sync
+- Synchronous calls (HTTP/gRPC) for queries needing immediate confirmation; async events for notifications, analytics, and cross-service data sync
 - Avoid distributed transactions — use sagas or eventual consistency
 
 ## Related Skills
-
-- `tech-stack-eval` — chain when the user needs help choosing specific technologies for the architecture
-- `security-review` — chain to review the architecture for threat vectors before implementation
-- `code-review` — chain after implementation to verify code matches architectural intent
+- `tech-stack-eval` — Chain when choosing specific technologies for the architecture
+- `security-review` — Chain to review the architecture for threat vectors before implementation
+- `code-review` — Chain after implementation to verify code matches architectural intent
 
 ## Examples
 
-**Example prompt:** "I'm building a SaaS project management tool. We have 3 engineers. How should I architect the backend?"
+**Prompt:** "I'm building a SaaS project management tool. 3 engineers. How should I architect it?"
 
 **Good output snippet:**
 ```
-Given your team of 3 and early stage, I recommend a modular monolith using
-your existing Node.js/PostgreSQL stack. Here are the domain modules:
+Given your team of 3 and early stage, I recommend a modular monolith.
+Domain modules:
 
-1. **Auth Module** — user accounts, roles, sessions
-2. **Projects Module** — workspaces, projects, permissions
-3. **Tasks Module** — tasks, assignments, comments, activity log
-4. **Notifications Module** — email digests, in-app notifications
+1. Auth Module — user accounts, roles, sessions
+2. Projects Module — workspaces, projects, permissions
+3. Tasks Module — tasks, assignments, comments, activity log
+4. Notifications Module — email digests, in-app notifications
 
-Each module gets its own DB schema (e.g., `auth.*`, `projects.*`) and
-communicates through internal function calls with typed interfaces — not
-HTTP. This gives you service-like boundaries without deployment complexity.
+Each module gets its own DB schema (auth.*, projects.*) and communicates
+through internal function calls with typed interfaces — not HTTP. This
+gives you service-like boundaries without deployment complexity.
+
+Architecture Assessment:
+  Detected pattern: Layered Architecture (confidence: 85%)
+  ✓ controllers/  - Presentation layer
+  ✓ services/     - Business logic layer
+  ✓ repositories/ - Data access layer
 ```
 
-**Example prompt:** "We need to add real-time collaboration to our document editor. Should we use WebSockets or SSE? Write me an ADR."
+**Prompt:** "Should we use WebSockets or SSE for real-time collaboration?"
 
 **Good output snippet:**
 ```
 ## ADR-001: Use WebSockets for Real-Time Collaboration
-- **Status:** Proposed
-- **Context:** Our document editor needs sub-200ms latency for cursor
-  positions and concurrent edits across 2-50 users per document.
-- **Decision:** WebSockets via Socket.io with Redis pub/sub for horizontal
-  scaling. SSE is simpler but only supports server-to-client; we need
-  bidirectional communication for operational transforms.
-- **Consequences:** Adds WebSocket infrastructure (sticky sessions or Redis
-  adapter), increases server memory per connection (~2KB/conn). Team needs
-  to learn OT/CRDT patterns.
-- **Alternatives considered:** SSE + POST (simpler but higher latency for
-  edits), Firebase Realtime DB (vendor lock-in, cost at scale).
+- Status: Proposed
+- Context: Document editor needs sub-200ms latency for cursor positions
+  and concurrent edits across 2-50 users per document.
+- Decision: WebSockets via Socket.io with Redis pub/sub for horizontal
+  scaling. SSE only supports server-to-client; we need bidirectional
+  communication for operational transforms.
+- Consequences: Adds WebSocket infrastructure (sticky sessions or Redis
+  adapter), ~2KB memory per connection. Team needs OT/CRDT knowledge.
+- Alternatives: SSE + POST (simpler but higher edit latency),
+  Firebase Realtime DB (vendor lock-in, cost at scale).
 ```

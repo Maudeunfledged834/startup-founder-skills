@@ -15,44 +15,45 @@ Activate when a founder or PM needs to turn a product idea, feature request, or 
 - **From the user:** the feature or initiative to spec, known user problems it addresses, any prior research or customer feedback, desired timeline, and scope preference (lightweight vs. full PRD).
 
 ## Workflow
-1. **Clarify scope level** — Ask whether this needs a lightweight PRD (early-stage exploration, 2-3 pages) or a full PRD (committed initiative, 5-8 pages). Default to lightweight if the company is pre-product-market-fit.
-2. **Gather inputs** — Collect the problem statement, target users, any existing research, success criteria, and known constraints.
-3. **Draft the 8-section PRD** — Write each section sequentially using the template below.
-4. **Validate assumptions** — Flag any sections where data is missing and recommend how to fill gaps (user interviews, analytics, competitive research).
-5. **Review and refine** — Present the draft, invite feedback, and iterate on specific sections.
+1. **Clarify scope level** -- Ask whether this needs a lightweight PRD (early-stage exploration, 2-3 pages) or a full PRD (committed initiative, 5-8 pages). Default to lightweight if the company is pre-product-market-fit.
+2. **Gather inputs** -- Collect the problem statement, target users, any existing research, success criteria, and known constraints. Identify key contacts and their roles.
+3. **Draft the 8-section PRD** -- Write each section sequentially using the template below. Use accessible language suitable for a broad audience including engineering, design, and leadership.
+4. **Flag assumptions** -- Explicitly list key assumptions underlying each section. For each, state what evidence supports it and what would invalidate it.
+5. **Review and refine** -- Present the draft, invite feedback, and iterate on specific sections. State the PRD version and last-updated date.
 
 ## Output Format
-A structured PRD document with the following 8 sections:
+A structured PRD document with 8 sections:
 
 ### Section Template
-1. **Summary** — One-paragraph elevator pitch. What is being built and why it matters.
-2. **Background** — Context on the problem space, prior attempts, and what changed to make this the right time.
-3. **Objective** — Clear statement of goals using the format: "Enable [user segment] to [action] resulting in [measurable outcome]."
-4. **Market Segments** — Who this is for. Primary and secondary segments with size estimates and characteristics.
-5. **Value Propositions** — What specific value each segment gets. Map value props to segments explicitly.
-6. **Solution** — Feature description, user flows, key interactions, wireframe-level detail. Include what is explicitly out of scope.
-7. **Release Strategy** — Phased rollout plan. Alpha/beta/GA stages, feature flags, rollback criteria.
-8. **Success Metrics** — Primary KPI, secondary metrics, leading indicators. Include targets and measurement timeline.
+1. **Summary** -- 2-3 sentence overview of what is being built and why it matters. Write for a broad audience.
+2. **Contacts** -- Key stakeholders with their roles and relevant context about their involvement.
+3. **Background** -- Context on the problem space: why now, what changed, what enables this initiative. Include competitive context on how others handle the same problem.
+4. **Objective** -- Goals, business and customer benefits, and strategic alignment. Define SMART success metrics tied to OKRs. Use the format: "Enable [user segment] to [action] resulting in [measurable outcome]."
+5. **Market Segment(s)** -- Define target users by problems and needs, not demographics. Describe primary and secondary segments with size estimates.
+6. **Value Proposition(s)** -- Map customer jobs addressed, gains provided, and pain points eliminated. Show competitive differentiation using frameworks like Value Curve analysis.
+7. **Solution** -- Feature descriptions, UX/prototypes, wireframes, user flows, and technology details when relevant. Include out-of-scope items explicitly. Document assumptions. Enumerate at least 5 edge cases.
+8. **Release** -- Phased rollout plan using relative timeframes (not exact dates). Define MVP vs. future iterations, feature flags, rollback criteria, and review checkpoints.
 
-For lightweight PRDs, sections 2, 6, and 7 can be condensed to 2-3 sentences each.
+For lightweight PRDs, sections 2, 3, and 8 can be condensed to 2-3 sentences each.
 
 ## Frameworks & Best Practices
-- **Problem before solution.** Spend 40% of the document on sections 1-5 (the "why") before touching section 6 (the "what"). A PRD that jumps to the solution is a spec, not a PRD.
+- **Problem before solution.** Spend 40% of the document on sections 1-5 (the "why") before touching section 7 (the "what"). A PRD that jumps to the solution is a spec, not a PRD.
 - **One objective, not five.** A PRD with multiple objectives is multiple PRDs. Split them. Each PRD should have a single primary metric it moves.
-- **Scope creep guard.** Explicitly list what is NOT in scope. This section is as important as what is in scope. Revisit the out-of-scope list when stakeholders propose additions.
-- **Measurable success.** Every metric must have a target number and a date. "Improve retention" is not a metric; "Increase D7 retention from 25% to 35% within 8 weeks of launch" is.
-- **Audience awareness.** Engineers need technical constraints and edge cases. Designers need user flows and personas. Executives need the summary and metrics. Write for all three audiences in a single document.
-- **Living document.** State the PRD version and last-updated date. PRDs that never change were never read. Update after every significant scope decision.
+- **Market segments defined by needs.** Describe who this is for based on the problems they face and jobs they hire the product to do, not by demographics or firmographics alone.
+- **Value Proposition clarity.** For each segment, explicitly state the customer jobs addressed, gains provided, and pains eliminated. Use the Value Curve to show where you differentiate from competitors.
+- **Data-driven specificity.** Replace vague language with specific numbers. "Improve retention" is not a metric; "Increase D7 retention from 25% to 35% within 8 weeks of launch" is.
+- **Scope creep guard.** Explicitly list what is NOT in scope. Revisit the out-of-scope list when stakeholders propose additions.
+- **Relative timeframes over dates.** Use phases and relative windows rather than exact calendar dates. This prevents false precision and allows flexibility.
+- **Assumption tracking.** List the top 3 assumptions underlying the PRD. For each, state supporting evidence and what would invalidate it.
+- **Audience awareness.** Engineers need technical constraints and edge cases. Designers need user flows and personas. Executives need the summary and metrics. Write for all three in a single document.
+- **Living document.** State the PRD version and last-updated date. PRDs that never change were never read.
 - **Lightweight PRD triggers:** pre-PMF exploration, hackathon projects, internal tools, experiments with <2 week timelines.
 - **Full PRD triggers:** cross-team initiatives, features with external dependencies, anything touching payments or compliance.
-- **Edge cases belong in the PRD.** Enumerate at least 5 edge cases in the Solution section. What happens when the user has no data? What if they lose connectivity mid-flow? What about permissions for shared resources?
-- **Competitor context in Background.** Always mention how competitors handle the same problem (or fail to). This grounds the "why now" and validates the opportunity.
-- **Assumption tracking.** List the top 3 assumptions underlying the PRD. For each, state what evidence supports it and what would invalidate it. Link to user research if available.
 
 ## Related Skills
-- `roadmap-planning` — Chain after writing PRDs to slot the initiative into the broader roadmap with dependencies and timelines.
-- `mvp-scoping` — Chain before writing a PRD to determine what to include in v1 vs. defer to later releases.
-- `user-research-synthesis` — Chain before writing a PRD to ground the Background and Market Segments sections in real customer data.
+- `roadmap-planning` -- Chain after writing PRDs to slot the initiative into the broader roadmap with dependencies and timelines.
+- `mvp-scoping` -- Chain before writing a PRD to determine what to include in v1 vs. defer to later releases.
+- `user-research-synthesis` -- Chain before writing a PRD to ground the Background and Market Segments sections in real customer data.
 
 ## Examples
 
@@ -64,6 +65,8 @@ For lightweight PRDs, sections 2, 6, and 7 can be condensed to 2-3 sentences eac
 >
 > **Objective:** Enable team leads on paid plans to receive real-time project updates in Slack, resulting in a 20% reduction in average response time to task assignments within 6 weeks of launch.
 >
+> **Market Segment:** Teams of 10+ coordinating across tools, whose primary pain is context-switching between project management and communication platforms.
+>
 > **Out of scope:** Microsoft Teams integration, custom notification templates, Slack bot commands.
 
 ### Example 2: Full PRD prompt
@@ -72,14 +75,11 @@ For lightweight PRDs, sections 2, 6, and 7 can be condensed to 2-3 sentences eac
 **Good output excerpt:**
 > **Background:** Current onboarding requires 7 steps and takes an average of 12 minutes. Hotjar recordings show 45% of users abandon at the "connect data source" step. Competitor X reduced their onboarding to 3 steps in Q2 and reported a 2x improvement in activation. Our support team handles 30+ onboarding tickets per week, costing approximately $4,500/month.
 >
-> **Release Strategy:**
-> - Week 1-2: Internal dogfood with the team
-> - Week 3: 10% of new signups (with feature flag)
-> - Week 4: 50% rollout if activation rate > 45%
-> - Week 5: GA if no P0 bugs and support ticket volume decreases
-> - Rollback trigger: activation rate drops below current 40% baseline
+> **Value Proposition:** Eliminate the "connect data source" friction by offering a sample dataset that lets users experience core value before committing to integration. Differentiated from Competitor X which still requires immediate data connection.
 >
-> **Success Metrics:**
-> - Primary: Increase onboarding completion rate from 40% to 65% within 6 weeks of GA
-> - Secondary: Reduce median time-to-first-value from 12 minutes to under 5 minutes
-> - Leading indicator: Decrease onboarding-related support tickets by 50%
+> **Release:**
+> - Phase 1: Internal dogfood with the team (2 weeks)
+> - Phase 2: 10% of new signups via feature flag
+> - Phase 3: 50% rollout if activation rate > 45%
+> - Phase 4: GA if no P0 bugs and support ticket volume decreases
+> - Rollback trigger: activation rate drops below current 40% baseline

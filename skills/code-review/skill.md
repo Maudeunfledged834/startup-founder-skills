@@ -8,28 +8,38 @@ reads: [startup-context]
 # Code Review
 
 ## When to Use
-
 - The user shares code (file, snippet, or diff) and asks for feedback
 - They paste a pull request or want to know if code is production-ready
 - Pre-merge quality gate or bug hunting
+- Reviewing architectural decisions in a PR
 
 ## Context Required
-
 From `startup-context`: tech stack, product stage, team size. Also need from the user:
 - The code or diff to review
-- What the code is supposed to do (feature context)
+- What the code is supposed to do (PR purpose or feature context)
 - Any specific concerns (performance, security, correctness)
 - Language and framework if not obvious from the code
 
 ## Workflow
+Follow a structured five-step methodology. Each step must be completed before moving to the next.
 
-1. **Understand intent** — Read the code and any description to understand what it is supposed to accomplish. If unclear, ask the user before reviewing.
-2. **Correctness pass** — Check for logic errors, off-by-one bugs, null/undefined handling, race conditions, and edge cases.
-3. **Security pass** — Scan for OWASP Top 10 vulnerabilities: injection, broken auth, sensitive data exposure, XXE, broken access control, misconfig, XSS, insecure deserialization, known vulnerable components, insufficient logging.
-4. **Performance pass** — Look for N+1 queries, missing indexes (if DB code), unnecessary re-renders (if frontend), O(n^2) algorithms on large datasets, missing caching opportunities, memory leaks.
-5. **Maintainability pass** — Evaluate naming, function length, single responsibility, DRY violations, dead code, missing error handling, type safety.
-6. **Test coverage assessment** — Note untested paths, missing edge case tests, brittle test patterns (testing implementation vs behavior).
-7. **Categorize and report** — Group findings by severity and deliver structured output.
+1. **Context** — Understand and summarize the PR's purpose before any analysis. Recap the intent back to the user in 1-2 sentences. If unclear, ask before proceeding. Never start reviewing without understanding what the code is trying to accomplish.
+2. **Structure** — Evaluate architectural decisions and design patterns:
+   - Does the code belong in the right module/layer?
+   - Are abstractions appropriate (not too many, not too few)?
+   - Does this change align with the existing codebase patterns?
+   - For non-obvious design choices, acknowledge the author's reasoning before proposing alternatives.
+3. **Details** — Assess code quality across multiple dimensions:
+   - **Correctness:** Logic errors, off-by-one bugs, null/undefined handling, race conditions, edge cases
+   - **Security:** OWASP Top 10 baseline — injection, broken auth, data exposure, XSS, access control, misconfig, insecure deserialization, vulnerable components
+   - **Performance:** N+1 queries, unnecessary re-renders, O(n^2) on large datasets, missing caching, memory leaks
+   - **Naming and clarity:** Do names communicate intent? Are functions focused on a single responsibility?
+4. **Tests** — Validate test coverage with equal rigor as code review:
+   - Are behavioral assertions present (not just implementation testing)?
+   - Are edge cases and error paths covered?
+   - Are tests brittle or resilient to refactoring?
+   - What test cases are missing?
+5. **Feedback** — Generate a prioritized, categorized report with specific code examples and concrete improvements. Recognize strong patterns and good decisions explicitly.
 
 ## Output Format
 
@@ -37,12 +47,12 @@ From `startup-context`: tech stack, product stage, team size. Also need from the
 # Code Review: [Feature/File Name]
 
 ## Summary
-One-paragraph assessment: is this ready to merge, needs minor fixes, or needs rework?
+One-paragraph assessment: what the PR does, whether it is ready to merge, needs minor fixes, or needs rework.
 
 ## Findings
 
 ### Critical (must fix before merge)
-- **[CRT-1] Title** — file:line — description, why it matters, suggested fix
+- **[CRT-1] Title** — file:line — description, why it matters, suggested fix with code example
 
 ### Major (should fix before merge)
 - **[MAJ-1] Title** — file:line — description, why it matters, suggested fix
@@ -53,15 +63,8 @@ One-paragraph assessment: is this ready to merge, needs minor fixes, or needs re
 ### Positive (things done well)
 - **[POS-1] Title** — file:line — what was done well and why it matters
 
-## Security Checklist
-- [ ] No SQL/NoSQL injection vectors
-- [ ] No XSS vulnerabilities
-- [ ] Auth/authz properly enforced
-- [ ] Sensitive data not logged or exposed
-- [ ] Input validated and sanitized
-
-## Performance Notes
-Brief assessment of performance implications.
+## Questions
+Clarifying questions about non-obvious design choices before blocking on them.
 
 ## Suggested Tests
 - Test case 1
@@ -71,7 +74,6 @@ Brief assessment of performance implications.
 ## Frameworks & Best Practices
 
 ### Severity Definitions
-
 | Severity | Definition | Action |
 |----------|-----------|--------|
 | **Critical** | Security vulnerability, data loss risk, crash in production, broken core functionality | Block merge |
@@ -79,8 +81,14 @@ Brief assessment of performance implications.
 | **Minor** | Style issue, naming improvement, minor optimization, documentation gap | Fix when convenient |
 | **Positive** | Well-written code, good pattern usage, thoughtful error handling | Acknowledge and reinforce |
 
-### OWASP Top 10 Quick Checks
+### Review Principles
+- **Always ground feedback in specifics.** Every finding must reference a file, line, and include a concrete improvement — not just "this could be better."
+- **Recognize good work explicitly.** Call out strong patterns, clean abstractions, and thoughtful error handling. Reviews that only flag problems are demoralizing and incomplete.
+- **Acknowledge author reasoning.** For non-obvious choices, assume the author had a reason. Ask before overriding. Phrase as "I see you chose X — was that because of Y? If so, consider Z as an alternative."
+- **Do not block on style when automated tooling handles it.** Linting and formatting are the job of CI, not reviewers. Focus on logic, architecture, and correctness.
+- **Treat test review with equal weight.** Tests are not an afterthought. Missing tests for critical paths is a major finding, not a minor one.
 
+### OWASP Top 10 Quick Checks
 1. **Injection** — Are user inputs parameterized? Check SQL, NoSQL, OS command, LDAP
 2. **Broken Auth** — Sessions secure? Tokens rotated? Passwords hashed (bcrypt/argon2)?
 3. **Sensitive Data Exposure** — Secrets in env vars (not code)? PII encrypted at rest?
@@ -93,14 +101,12 @@ Brief assessment of performance implications.
 10. **Insufficient Logging** — Auth failures, access violations, and errors logged?
 
 ### N+1 Query Detection
-
 - Looping over a collection and making a DB call per item
 - ORM lazy loading inside a loop (e.g., `user.posts` in a `for user in users` loop)
 - GraphQL resolvers fetching related data per parent without DataLoader
 - **Fix:** Eager loading, batch queries, or DataLoader pattern
 
 ### Language-Agnostic Red Flags
-
 - Functions longer than 40 lines or more than 3 levels of nesting
 - Boolean params that change behavior (use separate functions)
 - Catch blocks that swallow exceptions silently
@@ -108,7 +114,6 @@ Brief assessment of performance implications.
 - Missing input validation on public API boundaries
 
 ## Related Skills
-
 - `security-review` — chain for a deep-dive security audit when critical security findings surface
 - `architecture-design` — chain when code review reveals structural problems that need architectural rethinking
 
@@ -121,30 +126,25 @@ Brief assessment of performance implications.
 # Code Review: POST /api/users Handler
 
 ## Summary
-Critical SQL injection and missing input validation. Needs fixes before merge.
+The handler creates users but has a critical SQL injection vulnerability and missing
+input validation. Needs fixes before merge. Clean async/await usage is a positive.
 
 ## Findings
 ### Critical
 - **[CRT-1] SQL Injection** — routes/users.js:14 — Email interpolated
-  directly into SQL. Use parameterized queries instead.
+  directly into SQL string. Use parameterized queries:
+  `db.query('INSERT INTO users (email) VALUES ($1)', [email])`
 
 ### Major
-- **[MAJ-1] No input validation** — routes/users.js:12 — Email used
-  from `req.body` with no validation. Add zod/joi schema.
+- **[MAJ-1] No input validation** — routes/users.js:12 — Email from
+  `req.body` used with no validation. Add zod/joi schema validation.
 - **[MAJ-2] Missing error handling** — routes/users.js:18 — DB errors
-  propagate as 500 with stack trace. Add try/catch.
+  propagate as 500 with stack trace. Wrap in try/catch, return generic error.
 
 ### Positive
-- **[POS-1] Clean async/await** — routes/users.js:11 — Easy to follow.
-```
+- **[POS-1] Clean async/await** — routes/users.js:11 — Easy to follow,
+  no callback nesting.
 
-**Example prompt:** "Is this React component okay for production?"
-
-**Good output snippet:**
-```
-### Major
-- **[MAJ-1] N+1 API calls** — Dashboard.tsx:23 — `useEffect` calls
-  `fetchMetrics(project.id)` per project. Batch into single request.
-- **[MAJ-2] Missing dependency array** — Dashboard.tsx:22 — `useEffect`
-  runs on every render. Add `[projects]` as dependency.
+## Questions
+- Is there a validation middleware already in the project that should be reused here?
 ```
