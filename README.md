@@ -84,6 +84,7 @@ See each skill's **Related Skills** section for the full dependency map.
 | [investor-research](skills/investor-research/) | High | Shawn Pang | Identify, qualify, and prioritize potential investors by stage, sector, check size, and portfolio fit. |
 | [data-room](skills/data-room/) | High | Shawn Pang | Prepare due diligence materials — checklists, document organization, and drafts for missing items. |
 | [fundraising-email](skills/fundraising-email/) | High | Shawn Pang | Write investor outreach — cold intros, warm follow-ups, update emails, and thank-you notes. |
+| [accelerator-application](skills/accelerator-application/) | High | Shawn Pang | Apply to YC, Techstars, and other accelerators — includes directory of top US programs, application drafts, and interview prep. |
 | | | | |
 | **Sales & BD** | | | |
 | [cold-outreach](skills/cold-outreach/) | High | [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/cold-outreach-sequence) | Write cold emails, LinkedIn messages, and follow-up sequences for B2B prospecting. Adapted from cold-outreach-sequence skill. |
@@ -101,6 +102,7 @@ See each skill's **Related Skills** section for the full dependency map.
 | [market-research](skills/market-research/) | Medium | [Pawel Huryn](https://github.com/phuryn/pm-skills/tree/main/pm-market-research/skills/market-sizing) | Size a market (TAM/SAM/SOM), identify trends, and validate market hypotheses. Adapted from market-sizing skill. |
 | [review-mining](skills/review-mining/) | High | Shawn Pang | Mine Trustpilot, G2, Capterra, and app store reviews to extract user pain points, switching triggers, and voice-of-customer language. |
 | [daily-product-digest](skills/daily-product-digest/) | High | Shawn Pang | Summarize what's trending on Product Hunt, Hacker News, and Indie Hackers — filtered for relevance to your market. |
+| [competitor-monitoring](skills/competitor-monitoring/) | High | Shawn Pang | Ongoing tracking of competitor pricing, features, hiring, and positioning changes — weekly intel briefs with threat levels. |
 | | | | |
 | **Recruiting & Team** | | | |
 | [job-description](skills/job-description/) | High | Shawn Pang | Write compelling job descriptions that attract top candidates without corporate jargon. |
@@ -130,6 +132,7 @@ See each skill's **Related Skills** section for the full dependency map.
 | [support-docs](skills/support-docs/) | High | Shawn Pang | Create help center articles, FAQs, troubleshooting guides, and API documentation. |
 | [feedback-synthesis](skills/feedback-synthesis/) | Medium | [Pawel Huryn](https://github.com/phuryn/pm-skills/tree/main/pm-product-discovery/skills/analyze-feature-requests) | Analyze customer feedback — categorize themes, identify patterns, and prioritize action items. Adapted from analyze-feature-requests skill. |
 | [churn-analysis](skills/churn-analysis/) | Medium | [Athina AI](https://github.com/athina-ai/goose-skills/tree/main/skills/composites/churn-risk-detector) | Analyze churn — identify drivers, design retention experiments, and create win-back campaigns. Adapted from churn-risk-detector skill. |
+| [sentiment-monitoring](skills/sentiment-monitoring/) | High | Shawn Pang | Monitor your own product's reviews and mentions across Product Hunt, G2, Trustpilot, Google Maps, and app stores — with response drafts and pattern detection. |
 | | | | |
 | **Marketing & Growth** | | | |
 | [landing-page](skills/landing-page/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills/tree/main/skills/page-cro) | Build or optimize a landing page — copy, layout, CTAs, and conversion optimization. Adapted from page-cro skill. |
@@ -140,6 +143,8 @@ See each skill's **Related Skills** section for the full dependency map.
 | [launch-strategy](skills/launch-strategy/) | Medium | [Daniel Mendes](https://github.com/dmend3z/tribo-skills/tree/main/plugins/product-launch-marketing) | Plan a product launch — Product Hunt, Hacker News, press outreach, and community seeding. Adapted from product-launch-marketing skill. |
 | [founder-thought-leadership](skills/founder-thought-leadership/) | High | Shawn Pang | Build founder IP and personal brand on X and LinkedIn — original frameworks, contrarian takes, and building in public. |
 | [community-discovery](skills/community-discovery/) | High | Shawn Pang | Find relevant Slack, Discord, Reddit, and forum communities where your target customers hang out — with engagement strategies. |
+| [event-hosting](skills/event-hosting/) | High | Shawn Pang | Plan and promote tech events, meetups, and workshops on Luma — event page copy, run of show, promotion plan, and follow-up. |
+| [earned-media-outreach](skills/earned-media-outreach/) | High | Shawn Pang | Find podcasts, journalists, and newsletter writers to get earned media exposure — pitches, target lists, and appearance prep. |
 <!-- SKILLS:END -->
 
 ## Installation
@@ -198,6 +203,7 @@ You can also invoke skills directly:
 - `investor-research` - Investor targeting and qualification
 - `data-room` - Due diligence preparation
 - `fundraising-email` - Investor outreach and updates
+- `accelerator-application` - Apply to YC, Techstars, and top US accelerators
 
 ### Sales & BD
 - `cold-outreach` - Prospecting emails and sequences
@@ -215,6 +221,7 @@ You can also invoke skills directly:
 - `market-research` - TAM/SAM/SOM and trend analysis
 - `review-mining` - Extract pain points from Trustpilot, G2, and app store reviews
 - `daily-product-digest` - Summarize trending launches on Product Hunt and Hacker News
+- `competitor-monitoring` - Ongoing tracking of competitor changes and strategic signals
 
 ### Recruiting & Team
 - `job-description` - Compelling job posts
@@ -244,6 +251,7 @@ You can also invoke skills directly:
 - `support-docs` - Help center and API docs
 - `feedback-synthesis` - Theme extraction from feedback
 - `churn-analysis` - Retention analysis and win-back
+- `sentiment-monitoring` - Monitor your product's reviews and public mentions
 
 ### Marketing & Growth
 - `landing-page` - Copy, layout, and conversion
@@ -254,6 +262,8 @@ You can also invoke skills directly:
 - `launch-strategy` - Product Hunt, HN, and press launches
 - `founder-thought-leadership` - Build founder IP and personal brand on X and LinkedIn
 - `community-discovery` - Find and engage Slack, Discord, Reddit communities for distribution
+- `event-hosting` - Plan and promote tech events and meetups on Luma
+- `earned-media-outreach` - Get on podcasts and earn press coverage
 
 ## What Can and Can't Be Automated
 
