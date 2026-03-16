@@ -2,8 +2,6 @@
 
 A collection of AI agent skills for tech startup founders. Covers the full founder stack — fundraising, sales, product, recruiting, engineering, legal, finance, and growth. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
-Built by [Shawn Pang](https://github.com/shawnpang). Inspired by [Marketing Skills](https://github.com/coreyhaines31/marketingskills) by Corey Haines.
-
 **Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
 
 ## What are Skills?
@@ -71,10 +69,10 @@ See each skill's **Related Skills** section for the full dependency map.
 | [fundraising-email](skills/fundraising-email/) | High | Shawn Pang | Write investor outreach — cold intros, warm follow-ups, update emails, and thank-you notes. |
 | | | | |
 | **Sales & BD** | | | |
-| [cold-outreach](skills/cold-outreach/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Write cold emails, LinkedIn messages, and follow-up sequences for B2B prospecting. Adapted from cold-email skill. |
-| [sales-script](skills/sales-script/) | Medium | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Demo scripts, discovery call frameworks, objection handling docs, and closing playbooks. Adapted from sales-enablement skill. |
+| [cold-outreach](skills/cold-outreach/) | High | [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills) | Write cold emails, LinkedIn messages, and follow-up sequences for B2B prospecting. Adapted from cold-outreach-sequence skill. |
+| [sales-script](skills/sales-script/) | Medium | [gtmagents](https://github.com/gtmagents/gtm-agents) | Demo scripts, discovery call frameworks, objection handling docs, and closing playbooks. Adapted from sales-calls skill. |
 | [proposal-generation](skills/proposal-generation/) | Medium | [Alireza Rezvani](https://github.com/alirezarezvani/claude-skills) | Create sales proposals, SOWs, and pricing quotes. Adapted from contract-and-proposal-writer skill. |
-| [lead-scoring](skills/lead-scoring/) | Medium | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Define ICP criteria, lead qualification frameworks, and scoring models. Adapted from revops skill. |
+| [lead-scoring](skills/lead-scoring/) | Medium | [Athina AI](https://github.com/athina-ai/goose-skills) | Define ICP criteria, lead qualification frameworks, and scoring models. Adapted from inbound-lead-qualification skill. |
 | [partnership-outreach](skills/partnership-outreach/) | High | Shawn Pang | Write partnership proposals, integration pitches, and co-marketing outreach. |
 | | | | |
 | **Product & Strategy** | | | |
@@ -109,18 +107,18 @@ See each skill's **Related Skills** section for the full dependency map.
 | [board-update](skills/board-update/) | Medium | [Alireza Rezvani](https://github.com/alirezarezvani/claude-skills) | Write investor updates, board decks, and monthly/quarterly reports. Adapted from board-deck-builder skill. |
 | | | | |
 | **Customer Success** | | | |
-| [onboarding-flow](skills/onboarding-flow/) | Medium | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Design or optimize user onboarding — activation flows, welcome sequences, and time-to-value optimization. Adapted from onboarding-cro skill. |
+| [onboarding-flow](skills/onboarding-flow/) | Medium | [Manoj Bajaj](https://github.com/manojbajaj95/claude-gtm-plugin) | Design or optimize user onboarding — activation flows, welcome sequences, and time-to-value optimization. Adapted from user-onboarding skill. |
 | [support-docs](skills/support-docs/) | High | Shawn Pang | Create help center articles, FAQs, troubleshooting guides, and API documentation. |
 | [feedback-synthesis](skills/feedback-synthesis/) | Medium | [phuryn](https://github.com/phuryn/pm-skills) | Analyze customer feedback — categorize themes, identify patterns, and prioritize action items. Adapted from analyze-feature-requests skill. |
-| [churn-analysis](skills/churn-analysis/) | Medium | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Analyze churn — identify drivers, design retention experiments, and create win-back campaigns. Adapted from churn-prevention skill. |
+| [churn-analysis](skills/churn-analysis/) | Medium | [Athina AI](https://github.com/athina-ai/goose-skills) | Analyze churn — identify drivers, design retention experiments, and create win-back campaigns. Adapted from churn-risk-detector skill. |
 | | | | |
 | **Marketing & Growth** | | | |
 | [landing-page](skills/landing-page/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Build or optimize a landing page — copy, layout, CTAs, and conversion optimization. Adapted from page-cro skill. |
 | [content-strategy](skills/content-strategy/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Plan content — blog strategy, SEO content calendars, thought leadership, and documentation. Adapted from content-strategy skill. |
-| [seo-technical](skills/seo-technical/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Audit or improve technical SEO — site structure, meta tags, schema markup, and Core Web Vitals. Adapted from seo-audit skill. |
+| [seo-technical](skills/seo-technical/) | High | [Daniel Agrici](https://github.com/AgriciDaniel/claude-seo) | Audit or improve technical SEO — site structure, meta tags, schema markup, and Core Web Vitals. Adapted from claude-seo skill. |
 | [email-marketing](skills/email-marketing/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Create email campaigns — newsletters, drip sequences, lifecycle emails, and re-engagement flows. Adapted from email-sequence skill. |
-| [social-content](skills/social-content/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Create social media content — LinkedIn posts, Twitter/X threads, and content repurposing. Adapted from social-content skill. |
-| [launch-strategy](skills/launch-strategy/) | Medium | [Corey Haines](https://github.com/coreyhaines31/marketingskills) | Plan a product launch — Product Hunt, Hacker News, press outreach, and community seeding. Adapted from launch-strategy skill. |
+| [social-content](skills/social-content/) | High | [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills) | Create social media content — LinkedIn posts, Twitter/X threads, and content repurposing. Adapted from linkedin-authority-builder skill. |
+| [launch-strategy](skills/launch-strategy/) | Medium | [Daniel Mendes](https://github.com/dmend3z/tribo-skills) | Plan a product launch — Product Hunt, Hacker News, press outreach, and community seeding. Adapted from product-launch-marketing skill. |
 <!-- SKILLS:END -->
 
 ## Installation
@@ -300,4 +298,15 @@ Found a way to improve a skill? Have a new skill to suggest? PRs and issues welc
 
 ## Acknowledgments
 
-Inspired by [Marketing Skills for AI Agents](https://github.com/coreyhaines31/marketingskills) by Corey Haines, which focuses on marketing tasks. This project extends the same concept to the full startup founder stack — fundraising, sales, product, recruiting, engineering, legal, ops, and growth.
+This project builds on the work of many open-source skill authors:
+
+- [Corey Haines](https://github.com/coreyhaines31/marketingskills) — Marketing Skills for AI Agents, the project that inspired this repo
+- [Alireza Rezvani](https://github.com/alirezarezvani/claude-skills) — Engineering, architecture, CI/CD, and compliance skills
+- [phuryn](https://github.com/phuryn/pm-skills) — Product management skills (PRDs, roadmaps, research, privacy)
+- [Jeff Allan](https://github.com/Jeffallan/claude-skills) — Code review and security review skills
+- [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills) — Cold outreach and social content skills
+- [Athina AI](https://github.com/athina-ai/goose-skills) — Lead scoring and churn analysis skills
+- [gtmagents](https://github.com/gtmagents/gtm-agents) — Sales and GTM skills
+- [Daniel Agrici](https://github.com/AgriciDaniel/claude-seo) — Technical SEO skills
+- [Daniel Mendes](https://github.com/dmend3z/tribo-skills) — Launch strategy and marketing skills
+- [Manoj Bajaj](https://github.com/manojbajaj95/claude-gtm-plugin) — Onboarding and GTM skills

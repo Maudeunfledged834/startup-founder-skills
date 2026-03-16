@@ -9,22 +9,19 @@ reads: [startup-context]
 
 ## When to Use
 
-- The user is starting a new project and needs CI/CD from scratch
-- They want to add testing, linting, or security scanning to an existing pipeline
+- The user needs CI/CD from scratch or wants to improve an existing pipeline
 - They need environment-specific deployment stages (staging, production)
-- They are migrating between CI/CD platforms
 - Their builds are slow and need optimization (caching, parallelism)
 - They need secrets management for deployment credentials
 
 ## Context Required
 
-From `startup-context`: tech stack, deployment target (cloud provider, platform), team size. Also detect or ask:
-- What is the project language and framework? (auto-detect from repo)
-- Where is it deployed? (Vercel, AWS, GCP, Fly.io, bare metal, etc.)
-- What CI/CD platform? (GitHub Actions, GitLab CI, CircleCI — default to GitHub Actions)
-- What environments exist? (dev, staging, production)
-- What tests exist? (unit, integration, e2e, none yet)
-- Are there secrets needed for build or deploy? (API keys, cloud credentials)
+From `startup-context`: tech stack, deployment target, team size. Also detect or ask:
+- Language and framework (auto-detect from repo when possible)
+- Deployment target (Vercel, AWS, GCP, Fly.io, etc.)
+- CI/CD platform (default: GitHub Actions)
+- Environments (dev, staging, production) and existing tests
+- Secrets needed for build or deploy
 
 ## Workflow
 
@@ -40,23 +37,11 @@ From `startup-context`: tech stack, deployment target (cloud provider, platform)
 
 ```markdown
 # CI/CD Pipeline: [Project Name]
-
-## Pipeline Overview
-(Mermaid flowchart showing stages)
-
-## Pipeline Configuration
-(Full YAML config file)
-
-## Secrets Required
-| Secret Name | Where to Get It | How to Add |
-|-------------|----------------|------------|
-
-## Setup Instructions
-1. Step-by-step to activate the pipeline
-
-## Optimization Notes
-- Caching strategy explanation
-- Estimated build time
+## Pipeline Overview — Mermaid flowchart showing stages
+## Pipeline Configuration — Full YAML config file
+## Secrets Required — table: name, where to get, how to add
+## Setup Instructions — step-by-step to activate
+## Optimization Notes — caching strategy, estimated build time
 ```
 
 ## Frameworks & Best Practices
@@ -75,13 +60,11 @@ From `startup-context`: tech stack, deployment target (cloud provider, platform)
 
 ### Pipeline Best Practices
 
-- **Lint first** — fast feedback, fail early before expensive test runs
-- **Run tests in parallel** — split unit and integration tests into separate jobs
-- **Cache aggressively** — dependency caching cuts 30-60% off build times
-- **Pin action versions** — use SHA hashes not tags for supply chain security
-- **Set timeouts** — prevent hung jobs: `timeout-minutes: 15`
-- **Use matrix builds** — only when you support multiple runtimes
-- **Use `concurrency` settings** — prevent overlapping deploys
+- **Lint first** — fail early before expensive test runs
+- **Parallel tests** — split unit and integration into separate jobs
+- **Cache aggressively** — cuts 30-60% off build times
+- **Pin action versions** — SHA hashes, not tags, for supply chain security
+- **Set timeouts** (`timeout-minutes: 15`) and **concurrency** settings
 
 ### Environment Strategy
 
@@ -146,14 +129,11 @@ jobs:
       - run: npm audit --audit-level=high
 ```
 
-**Example prompt:** "My Python CI build takes 8 minutes, how do I speed it up?"
+**Example prompt:** "My Python CI takes 8 minutes, how do I speed it up?"
 
 **Good output snippet:**
 ```
-Three fixes to cut build time to ~3 minutes:
-1. **Add pip caching** — cache `~/.cache/pip` keyed on
-   `hashFiles('requirements*.txt')`. Saves ~90s.
-2. **Split test jobs** — Run unit and integration tests in parallel.
-3. **Add path filters** — Skip CI on docs-only changes with
-   `paths-ignore: ['docs/**', '*.md']`.
+Three fixes to cut to ~3 minutes: (1) Add pip caching keyed on
+hashFiles('requirements*.txt'), (2) split unit/integration tests into
+parallel jobs, (3) add path filters to skip CI on docs-only changes.
 ```

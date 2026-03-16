@@ -9,20 +9,16 @@ reads: [startup-context]
 
 ## When to Use
 
-- The user is choosing a framework, language, database, or cloud provider for a new project
-- They want to compare two or more technologies head to head
-- They are considering migrating from one technology to another
-- They want to evaluate whether their current stack is right for their scaling needs
+- The user is choosing a framework, language, database, or cloud provider
+- They want to compare technologies or evaluate migration from one to another
 - They need a total cost of ownership (TCO) estimate for infrastructure decisions
 
 ## Context Required
 
-From `startup-context`: product type, team skills, current tech stack, stage, scale expectations, budget constraints. Also ask:
-- What problem are you solving with this technology? (don't let them start from a solution)
-- What are your non-negotiable requirements? (performance, compliance, team familiarity)
-- What is your team's experience with the options? (learning curve matters)
-- What is your timeline? (tight deadlines favor familiar tools)
-- What is your expected scale in 12 months? (avoid premature optimization and under-engineering)
+From `startup-context`: product type, team skills, tech stack, stage, scale, budget. Also ask:
+- What problem are you solving? (push back on solution-first thinking)
+- Non-negotiable requirements (performance, compliance, team familiarity)
+- Team experience with the options and timeline (tight deadlines favor familiar tools)
 
 ## Workflow
 
@@ -58,23 +54,16 @@ What we're choosing and why it matters.
 | **Weighted Total** | **X.X** | **X.X** | **X.X** |
 
 ## Ecosystem Health
-| Metric | Option A | Option B | Option C |
-|--------|----------|----------|----------|
-| GitHub Stars | | | |
-| Weekly Downloads | | | |
-| Last Release | | | |
-| Open Issues / Ratio | | | |
-| Major Companies Using | | | |
+| Metric | Option A | Option B |
+|--------|----------|----------|
+(GitHub stars, weekly downloads, last release, open issues, major users)
 
 ## TCO Estimate (12 months)
 | Cost Category | Option A | Option B |
 |---------------|----------|----------|
 
 ## Recommendation
-Clear winner and why, with caveats.
-
-## Migration Path (if applicable)
-Phased approach to switch technologies.
+Clear winner and why, with caveats. Migration path if applicable.
 ```
 
 ## Frameworks & Best Practices
@@ -84,15 +73,13 @@ Phased approach to switch technologies.
 Select 6-8 of these and assign weights (total = 100%):
 
 - **Performance** — throughput, latency, resource efficiency
-- **Developer Experience** — tooling, debugging, documentation quality
-- **Learning Curve** — time for your team to become productive
-- **Team Familiarity** — existing experience with this technology
-- **Ecosystem & Libraries** — packages, integrations, third-party support
-- **Maintenance & Longevity** — release cadence, corporate backing, bus factor
-- **Hiring Pool** — availability of developers who know this technology
-- **Scalability** — ability to handle 10-100x growth without rewrite
-- **Cost** — licensing, hosting, operational overhead
-- **Vendor Lock-in** — how hard is it to switch away later
+- **Developer Experience** — tooling, debugging, documentation
+- **Learning Curve / Team Familiarity** — time to productivity
+- **Ecosystem & Libraries** — packages, integrations, support
+- **Maintenance & Longevity** — release cadence, backing, bus factor
+- **Hiring Pool** — developer availability
+- **Scalability** — handle 10-100x growth without rewrite
+- **Cost / Vendor Lock-in** — TCO and switching cost
 
 ### Ecosystem Health Scoring
 
@@ -137,42 +124,27 @@ Use the strangler fig pattern for migrations: route new traffic to the new syste
 ```
 ## Recommendation: PostgreSQL
 
-For a B2B SaaS application with relational data (users, organizations,
-subscriptions, permissions), PostgreSQL is the clear choice.
-
-**Key factors:**
-- Your data is inherently relational — organizations have users, users
-  have roles, roles have permissions. Modeling this in MongoDB requires
-  denormalization that creates update anomalies.
-- PostgreSQL's JSONB column gives you schema flexibility for
-  user-defined fields without giving up transactions and joins.
-- Ecosystem: every ORM, every hosting platform, every backup tool
-  supports Postgres. The hiring pool is 3x larger.
-
-**When MongoDB would win:** If you were building a content platform
-with highly variable document shapes and no relational queries, MongoDB
-would be the better fit. That's not your case.
+For B2B SaaS with relational data (users, orgs, permissions), PostgreSQL
+is the clear choice. Your data is inherently relational — modeling in
+MongoDB requires denormalization that creates update anomalies. JSONB
+gives schema flexibility without giving up transactions. Ecosystem and
+hiring pool are 3x larger than MongoDB.
 ```
 
-**Example prompt:** "We're on Heroku and our bill is $2,400/month. Should we migrate to AWS?"
+**Example prompt:** "We're on Heroku at $2,400/mo. Should we migrate to AWS?"
 
 **Good output snippet:**
 ```
 ## TCO Estimate (12 months)
-
-| Category | Heroku (Current) | AWS (Projected) |
-|----------|------------------|-----------------|
+| Category | Heroku | AWS |
+|----------|--------|-----|
 | Compute | $1,200/mo | $480/mo (ECS Fargate) |
 | Database | $800/mo | $350/mo (RDS) |
-| Add-ons | $400/mo | $120/mo (equivalent) |
-| Bandwidth | included | $50/mo |
+| Add-ons | $400/mo | $120/mo |
 | Engineering (setup) | $0 | $12,000 one-time |
 | Engineering (ongoing) | 2 hrs/mo | 8 hrs/mo |
 | **Annual Total** | **$28,800** | **$18,000** |
 
-The migration saves ~$10,800/year but costs ~$12,000 in upfront
-engineering time plus 6 hrs/mo additional operational overhead.
-**Break-even is at month 14.** At your stage (Series A, team of 6),
-I'd wait until the Heroku bill hits $4,000/mo before migrating — the
-engineering hours are better spent on product right now.
+Break-even at month 14. At Series A with team of 6, wait until Heroku
+hits $4,000/mo — engineering hours are better spent on product now.
 ```

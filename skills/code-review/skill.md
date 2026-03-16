@@ -10,10 +10,8 @@ reads: [startup-context]
 ## When to Use
 
 - The user shares code (file, snippet, or diff) and asks for feedback
-- They paste a pull request or ask to review changes
-- They want to know if their code is production-ready
-- They suspect a bug and want a second pair of eyes
-- Pre-merge quality gate before deploying to production
+- They paste a pull request or want to know if code is production-ready
+- Pre-merge quality gate or bug hunting
 
 ## Context Required
 

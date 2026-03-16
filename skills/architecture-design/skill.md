@@ -10,10 +10,9 @@ reads: [startup-context]
 ## When to Use
 
 - The user is starting a new product or major feature and needs a system design
-- They want to evaluate monolith vs microservices for their current stage
-- They need data model design, API contract definitions, or service boundary decisions
+- They need data model design, API contracts, or service boundary decisions
 - They want an Architecture Decision Record (ADR) for a technical choice
-- They are hitting scaling pain and need to restructure their system
+- They are evaluating monolith vs microservices or hitting scaling pain
 
 ## Context Required
 
