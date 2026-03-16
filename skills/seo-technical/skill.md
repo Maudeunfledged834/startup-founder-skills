@@ -62,7 +62,7 @@ Audit across 9 technical dimensions. Score on a 100-point scale with category br
    - BreadcrumbList schema for navigation clarity.
    - Validate with Google's Rich Results Test.
 8. **JavaScript rendering** — Critical for SPAs and JS-heavy sites.
-   - Serve canonical tags, robots directives, and structured data in initial server-rendered HTML. As of December 2025, Google may not reliably process these if injected via JavaScript.
+   - Serve canonical tags, robots directives, and structured data in initial server-rendered HTML. Google may not reliably process these if injected via JavaScript.
    - Verify server-side rendering or pre-rendering is in place for critical content.
    - Test what Googlebot actually sees vs. what users see.
 9. **AI crawler management** — Managing AI crawlers via robots.txt is a critical 2025-2026 consideration.
@@ -81,7 +81,7 @@ Each item includes: the issue, why it matters for rankings, how to fix it, and e
 
 ## Frameworks & Best Practices
 - **Canonical tags are directives, not suggestions**: While Google treats them as hints, properly implemented canonicals are followed in the vast majority of cases. Always self-canonical pages and canonical duplicates to the preferred version.
-- **JavaScript SEO (December 2025 guidance)**: Critical metadata (canonical, robots, structured data) must be in initial server-rendered HTML. Google can render JS but with delays and reliability gaps.
+- **JavaScript SEO**: Critical metadata (canonical, robots, structured data) must be in initial server-rendered HTML. Google can render JS but with delays and reliability gaps.
 - **Mobile-first is complete**: Since July 2024, there is no "desktop index." The mobile version IS the version Google indexes. Full content parity is non-negotiable.
 - **INP replaced FID**: FID was fully removed from Chrome tools by September 2024. All performance optimization should target INP (under 200ms), not FID.
 - **Crawl budget**: Rarely an issue for sites under 10,000 pages. For larger sites, prioritize by removing low-value pages and fixing redirect chains.

@@ -46,7 +46,7 @@ reads: [startup-context]
 - **Blog post:** Contextual CTAs matching content topic, inline CTAs at natural stopping points.
 
 ### Copy Principles
-- **Headline carries 80% of the weight.** If the headline does not stop the scroll, nothing else matters. Test headlines before anything else.
+- **The headline is the most important element on the page.** If the headline does not stop the scroll, nothing else matters. Test headlines before anything else.
 - **Specificity beats cleverness.** "Save 12 hours per week on reporting" outperforms "Work smarter, not harder" every time.
 - **The subheadline does the heavy lifting.** The headline earns attention; the subheadline explains the value. Use it to clarify who the product is for, what it does, and why it matters.
 - **Awareness-level matching.** Match copy depth to visitor awareness. Paid search visitors are typically solution-aware (want pricing and CTAs). Social ad visitors are typically problem-aware or unaware (need problem education first). Traffic source reveals awareness level.

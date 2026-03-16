@@ -78,7 +78,7 @@ Numbered list of what the market data means for product, pricing, and go-to-mark
 **User:** "Help me size the market for our developer productivity tool. We need the TAM/SAM/SOM for our Series A deck."
 
 **Good output excerpt:**
-> **TAM:** $28B -- Global developer tools market (source: IDC 2025, includes IDEs, testing, CI/CD, monitoring, and productivity tools).
+> **TAM:** $[X]B -- Global developer tools market (source: [industry report], includes IDEs, testing, CI/CD, monitoring, and productivity tools).
 >
 > **SAM:** $4.2B -- Code review and collaboration segment, filtered to teams of 10-500 developers at companies with >$5M revenue in North America and Europe.
 >

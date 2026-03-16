@@ -55,7 +55,7 @@ A complete, ready-to-post job description in markdown with the following section
 - State accommodation availability for the interview process.
 
 ### Compensation Transparency
-- Include a salary range. Listings with ranges get 30%+ more applicants.
+- Include a salary range. Listings with ranges get significantly more applicants.
 - If equity is offered, state the range in percentage or share count and mention the vesting schedule.
 - Name benefits explicitly rather than saying "competitive benefits package."
 

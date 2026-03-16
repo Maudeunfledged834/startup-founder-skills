@@ -100,7 +100,7 @@ Information Security, Access Control (MFA, least privilege, access reviews), Cha
 
 **Right-Sizing by Stage:** Seed (5-15): foundational controls, automation-heavy, concise policies, one part-time owner. Series A (15-50): dedicated compliance owner or fractional CISO, formal access reviews. Series B+ (50+): full-time security team, internal audit, GRC platform.
 
-**Cost-Effective Tooling:** Compliance automation (Vanta, Drata, Secureframe -- cuts 40-60% of effort), SSO (Google Workspace or Okta), MDM (Kandji or Jamf), monitoring (Datadog, PagerDuty), vulnerability scanning (Dependabot, Snyk, Trivy).
+**Cost-Effective Tooling:** Compliance automation (Vanta, Drata, Secureframe — significantly reduces manual effort), SSO (Google Workspace or Okta), MDM (Kandji or Jamf), monitoring (Datadog, PagerDuty), vulnerability scanning (Dependabot, Snyk, Trivy).
 
 ### Timeline Templates
 

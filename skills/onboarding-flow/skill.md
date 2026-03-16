@@ -91,7 +91,7 @@ Prioritize onboarding that happens within the product experience itself, not det
 
 ### Checklist Design Principles
 - **3-5 items maximum.** Completion rates drop sharply above 5.
-- **First item should be pre-completed.** Starting with visible progress increases completion by 30%+.
+- **First item should be pre-completed.** Starting with visible progress significantly increases completion rates (endowed progress effect).
 - **Each item takes under 2 minutes.** If longer, break it into sub-steps.
 - **Show the reward.** "Connect Slack -> Get instant notifications" not just "Connect Slack."
 - **Allow skipping with consequences.** Let users skip but show what they lose.

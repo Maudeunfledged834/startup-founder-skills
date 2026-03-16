@@ -41,7 +41,7 @@ reads: [startup-context]
 ### Tier 1 — Generalist, Top-Tier
 | Program | Investment | Equity | Duration | Location | Deadline Pattern | Best For |
 |---------|-----------|--------|----------|----------|-----------------|----------|
-| Y Combinator | $500K | 7% | 3 months | San Francisco | Rolling (batches in Jan & Jun) | Technical founders, fast-growing startups at any stage |
+| Y Combinator | $500K ($125K for 7% + $375K uncapped MFN SAFE) | 7% (on $125K portion) | 3 months | San Francisco | Rolling (batches in Jan & Jun) | Technical founders, fast-growing startups at any stage |
 | Techstars | $120K | 6% | 3 months | Multiple cities | Varies by program | Coachable founders, strong mentor network needs |
 | 500 Global | $150K | 5% | 4 months | San Francisco | Rolling | International founders, diverse backgrounds |
 | Antler | $250K | 8-10% | 6 months | NYC, Austin | Rolling | Pre-team / pre-idea founders looking for co-founders |
@@ -50,7 +50,7 @@ reads: [startup-context]
 ### Tier 2 — Sector-Specific
 | Program | Focus | Investment | Location |
 |---------|-------|-----------|----------|
-| a]16z Speedrun | Consumer tech | $750K | San Francisco |
+| a16z Speedrun | Consumer tech | $750K | San Francisco |
 | Neo | Enterprise / deep tech | Varies | San Francisco |
 | Alchemist Accelerator | Enterprise sales | $36K | San Francisco |
 | Dreamit Ventures | HealthTech, UrbanTech | $50-100K | Philadelphia / NYC |
@@ -58,8 +58,6 @@ reads: [startup-context]
 | Plug and Play | Industry verticals | Varies (no equity) | Sunnyvale |
 | ERA (Entrepreneur Roundtable) | NYC ecosystem | $100K | New York |
 | Gener8tor | Midwest / emerging markets | $100K | Milwaukee, multiple |
-| Indie.vc | Sustainable growth, alt-funding | Revenue-based | Remote |
-| On Deck | Community + capital | Varies | Remote |
 
 ### Tier 3 — University & Government
 | Program | Focus | Location |
