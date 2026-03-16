@@ -69,7 +69,7 @@ See each skill's **Related Skills** section for the full dependency map.
 | [investor-research](skills/investor-research/) | High | Shawn Pang | Identify, qualify, and prioritize potential investors by stage, sector, check size, and portfolio fit. |
 | [data-room](skills/data-room/) | High | Shawn Pang | Prepare due diligence materials — checklists, document organization, and drafts for missing items. |
 | [fundraising-email](skills/fundraising-email/) | High | Shawn Pang | Write investor outreach — cold intros, warm follow-ups, update emails, and thank-you notes. |
-| [accelerator-application](skills/accelerator-application/) | High | Shawn Pang | Apply to YC, Techstars, and other accelerators — includes directory of top US programs, application drafts, and interview prep. |
+| [accelerator-application](skills/accelerator-application/) | High | Shawn Pang | Apply to YC, Techstars, and 40+ other accelerators — includes directory with websites, application drafts, and interview prep. |
 | | | | |
 | **Sales & BD** | | | |
 | [cold-outreach](skills/cold-outreach/) | High | [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/cold-outreach-sequence) | Write cold emails, LinkedIn messages, and follow-up sequences for B2B prospecting. Adapted from cold-outreach-sequence skill. |
@@ -188,7 +188,7 @@ You can also invoke skills directly:
 - `investor-research` - Investor targeting and qualification
 - `data-room` - Due diligence preparation
 - `fundraising-email` - Investor outreach and updates
-- `accelerator-application` - Apply to YC, Techstars, and top US accelerators
+- `accelerator-application` - Apply to 40+ accelerators (YC, Techstars, HF0, a16z Speedrun, and more)
 
 ### Sales & BD
 - `cold-outreach` - Prospecting emails and sequences
