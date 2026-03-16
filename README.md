@@ -1,6 +1,10 @@
 # Startup Founder Skills for AI Agents
 
-A collection of AI agent skills for tech startup founders. Inspired by [Marketing Skills](https://github.com/coreyhaines31/marketingskills) by Corey Haines — extended from marketing to the full founder stack: fundraising, sales, product, recruiting, engineering, legal, finance, and growth. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
+I've been bootstrapping and starting companies for the past 10 years. Somewhere along the way, I realized that more and more of what I do every day — writing cold emails, drafting pitch decks, prepping for calls, reviewing contracts, writing job descriptions — can be automated. So I set out to find the 50 founder tasks that AI handles best and pair each one with the best open-source skill to do it.
+
+The goal is simple: spend less time on repeatable work so I can spend more time on what actually matters — talking to users, trying more products, and making genuine connections. Also touching grass and working out more.
+
+Inspired by [Marketing Skills](https://github.com/coreyhaines31/marketingskills) by Corey Haines — extended from marketing to the full founder stack: fundraising, sales, product, recruiting, engineering, legal, finance, and growth. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the [Agent Skills spec](https://agentskills.io).
 
 **Contributions welcome!** Found a way to improve a skill or have a new one to add? [Open a PR](#contributing).
 
