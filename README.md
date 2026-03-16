@@ -99,6 +99,8 @@ See each skill's **Related Skills** section for the full dependency map.
 | [mvp-scoping](skills/mvp-scoping/) | Medium | Shawn Pang | Define MVP scope — what to build, what to cut, and what to defer. |
 | [competitive-analysis](skills/competitive-analysis/) | High | [Pawel Huryn](https://github.com/phuryn/pm-skills/tree/main/pm-market-research/skills/competitor-analysis) | Research competitors — feature comparison, positioning analysis, pricing benchmarks, and market mapping. Adapted from competitor-analysis skill. |
 | [market-research](skills/market-research/) | Medium | [Pawel Huryn](https://github.com/phuryn/pm-skills/tree/main/pm-market-research/skills/market-sizing) | Size a market (TAM/SAM/SOM), identify trends, and validate market hypotheses. Adapted from market-sizing skill. |
+| [review-mining](skills/review-mining/) | High | Shawn Pang | Mine Trustpilot, G2, Capterra, and app store reviews to extract user pain points, switching triggers, and voice-of-customer language. |
+| [daily-product-digest](skills/daily-product-digest/) | High | Shawn Pang | Summarize what's trending on Product Hunt, Hacker News, and Indie Hackers — filtered for relevance to your market. |
 | | | | |
 | **Recruiting & Team** | | | |
 | [job-description](skills/job-description/) | High | Shawn Pang | Write compelling job descriptions that attract top candidates without corporate jargon. |
@@ -136,6 +138,8 @@ See each skill's **Related Skills** section for the full dependency map.
 | [email-marketing](skills/email-marketing/) | High | [Corey Haines](https://github.com/coreyhaines31/marketingskills/tree/main/skills/email-sequence) | Create email campaigns — newsletters, drip sequences, lifecycle emails, and re-engagement flows. Adapted from email-sequence skill. |
 | [social-content](skills/social-content/) | High | [Brian Wagner](https://github.com/BrianRWagner/ai-marketing-claude-code-skills/tree/main/linkedin-authority-builder) | Create social media content — LinkedIn posts, Twitter/X threads, and content repurposing. Adapted from linkedin-authority-builder skill. |
 | [launch-strategy](skills/launch-strategy/) | Medium | [Daniel Mendes](https://github.com/dmend3z/tribo-skills/tree/main/plugins/product-launch-marketing) | Plan a product launch — Product Hunt, Hacker News, press outreach, and community seeding. Adapted from product-launch-marketing skill. |
+| [founder-thought-leadership](skills/founder-thought-leadership/) | High | Shawn Pang | Build founder IP and personal brand on X and LinkedIn — original frameworks, contrarian takes, and building in public. |
+| [community-discovery](skills/community-discovery/) | High | Shawn Pang | Find relevant Slack, Discord, Reddit, and forum communities where your target customers hang out — with engagement strategies. |
 <!-- SKILLS:END -->
 
 ## Installation
@@ -209,6 +213,8 @@ You can also invoke skills directly:
 - `mvp-scoping` - MVP definition and scope cutting
 - `competitive-analysis` - Competitor research and positioning
 - `market-research` - TAM/SAM/SOM and trend analysis
+- `review-mining` - Extract pain points from Trustpilot, G2, and app store reviews
+- `daily-product-digest` - Summarize trending launches on Product Hunt and Hacker News
 
 ### Recruiting & Team
 - `job-description` - Compelling job posts
@@ -246,6 +252,8 @@ You can also invoke skills directly:
 - `email-marketing` - Campaigns and lifecycle emails
 - `social-content` - LinkedIn, Twitter/X content
 - `launch-strategy` - Product Hunt, HN, and press launches
+- `founder-thought-leadership` - Build founder IP and personal brand on X and LinkedIn
+- `community-discovery` - Find and engage Slack, Discord, Reddit communities for distribution
 
 ## What Can and Can't Be Automated
 
