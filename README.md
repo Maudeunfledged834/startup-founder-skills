@@ -25,17 +25,6 @@ In some cases, multiple skills from a source were merged into one. For example, 
 
 Every attributed skill was [verified against its source](/README.md#acknowledgments) — the Author column in the table below links directly to the original skill each one is based on.
 
-## How Well Does This Actually Work?
-
-Not all founder tasks are equally automatable. We tier every skill by confidence level so you know what to trust and what to double-check.
-
-| Tier | Meaning | What to expect |
-|------|---------|----------------|
-| **High** | Agent output is directly usable | Ship it after a quick skim. These are writing, research, and code tasks where AI consistently produces good results. |
-| **Medium** | Good drafts, needs founder review | Saves 60-80% of the work, but you need to edit, validate, or add judgment before using. |
-
-We intentionally excluded tasks where AI is unreliable — financial modeling, unit economics, pricing decisions, and OKR-setting. These require human judgment and verified numbers, not AI scaffolding. See [What Can and Can't Be Automated](#what-can-and-cant-be-automated) for details.
-
 ## How Skills Work Together
 
 Every skill reads from `startup-context` first — your company's stage, product, market, team, and metrics. This shared context means skills produce output tailored to your specific startup, not generic advice.
@@ -264,35 +253,6 @@ You can also invoke skills directly:
 - `community-discovery` - Find and engage Slack, Discord, Reddit communities for distribution
 - `event-hosting` - Plan and promote tech events and meetups on Luma
 - `earned-media-outreach` - Get on podcasts and earn press coverage
-
-## What Can and Can't Be Automated
-
-### What AI agents do well
-
-- **Writing at volume** — emails, docs, copy, posts, job descriptions, outreach sequences. This is the #1 proven use case. 82% of founders cite content generation as their top AI workflow.
-- **Research and analysis** — competitor intel, market sizing, investor targeting, feedback synthesis. Cuts research time by 50-60%.
-- **Code tasks** — review, CI/CD, architecture, security audits, technical SEO. The strongest overall category for coding agents.
-- **Legal document drafts** — policies, terms, contracts. YC-backed startups are using AI for 8x faster contract review. Still need a lawyer for anything binding.
-
-### What we intentionally left out
-
-- **Financial modeling** — LLMs hallucinate historical data and can't reliably handle formula logic. An unauditable number is a useless number.
-- **Unit economics / burn rate** — Same problem. Use a spreadsheet, not an AI agent.
-- **Pricing decisions** — AI can research competitors' pricing, but setting your own price is a high-stakes strategic call.
-- **OKR / goal-setting** — Structure is easy to template, but goals require your strategic vision. A framework without conviction is just busywork.
-- **Feature prioritization** — RICE scores are only as good as the inputs. The founder who talks to customers daily will out-prioritize any scoring model.
-
-### What requires a human, period
-
-- **Investor meetings** — skills prep you, but you run the room
-- **Hiring decisions** — skills write JDs and scorecards, but you pick the people
-- **Legal sign-off** — skills draft policies and flag risks, but get a lawyer for anything binding
-- **Live sales calls** — skills write your playbook, but objection handling is real-time judgment
-- **Strategy** — skills give you research, but you make the bets
-
-### The right mental model
-
-Think of these skills as a **chief of staff that works at AI speed** — they draft, research, structure, and prepare. You review, decide, and ship. The founder who uses AI to write 10 cold emails in 5 minutes and personally reviews each one will outperform both the founder who writes 2 emails manually and the one who auto-sends 100 unreviewed AI emails.
 
 ## Contributing
 
